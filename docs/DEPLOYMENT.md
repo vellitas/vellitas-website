@@ -68,4 +68,16 @@ ssh surf 'sudo certbot renew --dry-run'
 
 ## Current launch release
 
-The contact-alias revision was deployed as `/var/www/vellitas.com/releases/20260917T062243Z` on September 17, 2026.
+The v1 launch-readiness revision was deployed as `/var/www/vellitas.com/releases/20260917T070434Z` on September 17, 2026. It includes the leadership section, illustrative remediation report, privacy notice, structured organization data, Search Console verification, and updated sitemap.
+
+Google Search Console ownership for the canonical URL-prefix property was verified with an HTML meta tag, and `sitemap.xml` was accepted successfully with three discovered pages.
+
+## Production monitoring
+
+Run the production check locally with:
+
+```bash
+./scripts/check-production.sh
+```
+
+The same check runs hourly and on demand through `.github/workflows/site-health.yml`. It verifies core content, the canonical redirect, security headers, public supporting files, and that the TLS certificate has at least 21 days remaining.

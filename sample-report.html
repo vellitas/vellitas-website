@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="An illustrative Vellitas outside-in certificate security assessment and remediation report."
+    />
+    <meta name="theme-color" content="#020b14" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://vellitas.com/sample-report.html" />
+    <meta property="og:title" content="Illustrative Remediation Report | Vellitas" />
+    <meta
+      property="og:description"
+      content="See how Vellitas turns observed certificate defects into assignable corrective work and verification tests."
+    />
+    <meta property="og:image" content="https://vellitas.com/assets/og-image.jpg" />
+    <link rel="canonical" href="https://vellitas.com/sample-report.html" />
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="styles.css?v=20260917-0655" />
+    <title>Illustrative Remediation Report | Vellitas</title>
+  </head>
+  <body class="content-page">
+    <a class="skip-link" href="#main-content">Skip to content</a>
+
+    <header class="site-header" data-header>
+      <a class="wordmark" href="index.html#top" aria-label="Vellitas home">VELLITAS</a>
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-label="Open navigation"
+        aria-expanded="false"
+        aria-controls="site-navigation"
+        data-menu-toggle
+      >
+        <span></span><span></span>
+      </button>
+      <nav class="site-nav" id="site-navigation" aria-label="Primary navigation" data-menu>
+        <a href="index.html#problem">Problem</a>
+        <a href="index.html#platform">Platform</a>
+        <a href="index.html#patents">Patents</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+      <a
+        class="button button--header"
+        href="mailto:contact@vellitas.com?subject=Vellitas%20briefing%20request"
+      >Talk to Vellitas</a>
+    </header>
+
+    <main id="main-content">
+      <section class="report-hero">
+        <div class="section-shell report-hero__layout">
+          <div>
+            <p class="eyebrow">Illustrative report</p>
+            <h1>From observed defect to verified remediation.</h1>
+            <p>
+              This example shows the structure of a Vellitas deliverable. All domains, systems,
+              observations, and counts below are fictional and provided only to demonstrate the
+              reporting format.
+            </p>
+          </div>
+          <aside class="report-summary" aria-label="Illustrative assessment summary">
+            <span>Outside-in assessment</span>
+            <strong>Example Company</strong>
+            <dl>
+              <div><dt>Observed assets</dt><dd>148</dd></div>
+              <div><dt>Findings</dt><dd>6</dd></div>
+              <div><dt>Critical / high</dt><dd>2</dd></div>
+              <div><dt>Assessment date</dt><dd>Example</dd></div>
+            </dl>
+          </aside>
+        </div>
+      </section>
+
+      <section class="report-body section" aria-labelledby="sample-finding-heading">
+        <div class="section-shell report-grid">
+          <aside class="report-index">
+            <p class="eyebrow">Finding 01</p>
+            <span class="severity severity--high">High priority</span>
+            <p>Certificate health</p>
+          </aside>
+
+          <article class="finding-detail">
+            <header>
+              <p class="finding-detail__id">VLT-EXAMPLE-001</p>
+              <h2 id="sample-finding-heading">Expired certificate remains publicly accessible</h2>
+              <p>
+                An internet-facing service presented a certificate beyond its validity period.
+                External clients can observe the defect without authenticating to the service.
+              </p>
+            </header>
+
+            <section aria-labelledby="evidence-heading">
+              <h3 id="evidence-heading">Observed evidence</h3>
+              <dl class="evidence-table">
+                <div><dt>Observed host</dt><dd>legacy.example.com</dd></div>
+                <div><dt>Certificate subject</dt><dd>legacy.example.com</dd></div>
+                <div><dt>Validity status</dt><dd>Expired 31 days before observation</dd></div>
+                <div><dt>External service</dt><dd>HTTPS on TCP 443</dd></div>
+                <div><dt>Confidence</dt><dd>Confirmed through repeated outside-in observation</dd></div>
+              </dl>
+            </section>
+
+            <section aria-labelledby="risk-heading">
+              <h3 id="risk-heading">Why it matters</h3>
+              <p>
+                Users receive certificate warnings and may be trained to ignore future warnings.
+                The service may also indicate an unmaintained or forgotten asset that has fallen
+                outside normal patching, ownership, and monitoring processes.
+              </p>
+            </section>
+
+            <section aria-labelledby="remediation-heading">
+              <h3 id="remediation-heading">Required corrective work</h3>
+              <ol class="remediation-steps">
+                <li>Confirm the business owner and whether the public service is still required.</li>
+                <li>If required, renew the certificate using the approved certificate authority and deploy the complete chain.</li>
+                <li>If not required, remove the DNS record and securely decommission the public service.</li>
+                <li>Record ownership and renewal monitoring in the organization's asset-management process.</li>
+              </ol>
+            </section>
+
+            <section aria-labelledby="verification-heading">
+              <h3 id="verification-heading">Verification test</h3>
+              <ul class="verification-list">
+                <li>The public endpoint no longer presents the expired certificate.</li>
+                <li>The replacement certificate chains to an approved trust anchor.</li>
+                <li>The subject names match the externally observed hostname.</li>
+                <li>The endpoint remains corrected during a scheduled follow-up observation.</li>
+              </ul>
+            </section>
+
+            <footer class="finding-handoff">
+              <div><span>Suggested owner</span><strong>Infrastructure / IT operations</strong></div>
+              <div><span>Retest</span><strong>Outside-in verification after change</strong></div>
+            </footer>
+          </article>
+        </div>
+      </section>
+
+      <section class="report-cta">
+        <div class="section-shell report-cta__layout">
+          <div>
+            <p class="eyebrow">Your environment</p>
+            <h2>Make public defects assignable, fixable, and testable.</h2>
+          </div>
+          <a
+            class="button button--primary button--large"
+            href="mailto:contact@vellitas.com?subject=Vellitas%20briefing%20request"
+          >Request a briefing</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="section-shell site-footer__layout">
+        <a class="wordmark" href="index.html#top" aria-label="Vellitas home">VELLITAS</a>
+        <nav aria-label="Footer navigation">
+          <a href="index.html#platform">Platform</a>
+          <a href="index.html#about">About</a>
+          <a href="index.html#contact">Contact</a>
+          <a href="privacy.html">Privacy</a>
+        </nav>
+        <p>© <span data-year>2026</span> Vellitas, LLC</p>
+      </div>
+    </footer>
+    <script src="script.js" defer></script>
+  </body>
+</html>

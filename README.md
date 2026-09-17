@@ -10,6 +10,8 @@ A dependency-free static website for `vellitas.com`. It can be hosted directly o
 - `docs/DEPLOYMENT.md`: DNS, HTTPS, release, and rollback procedures
 - `docs/EMAIL.md`: the public contact alias and email-security notes
 - `docs/PROJECT-HISTORY.md`: product narrative and implementation record
+- `scripts/check-production.sh`: production availability, redirect, header, and TLS checks
+- `.github/workflows/site-health.yml`: hourly production monitoring through GitHub Actions
 
 ## Preview locally
 
@@ -26,7 +28,7 @@ Then open `http://localhost:4173`.
 The production host is the Ubuntu server reached with `ssh surf` at `135.148.44.243`.
 Nginx serves the site directly; PostgreSQL and an application runtime are not required.
 
-- Release directory: `/var/www/vellitas.com/releases/20260917T062243Z`
+- Release directory: `/var/www/vellitas.com/releases/20260917T070434Z`
 - Active release: `/var/www/vellitas.com/current`
 - Nginx site: `/etc/nginx/sites-available/vellitas.com`
 - Enabled site: `/etc/nginx/sites-enabled/vellitas.com`
@@ -52,6 +54,8 @@ renewal simulation completed successfully after installation.
 ## Contact action
 
 All primary calls to action open a pre-addressed email to `contact@vellitas.com`, a Google Workspace alias routed to the company inbox.
+
+SPF, DKIM, and monitoring-mode DMARC are published in Route 53. Gmail still needs the one-time **Send mail as** setup before replies can originate from the public alias.
 
 ## Patent links
 
