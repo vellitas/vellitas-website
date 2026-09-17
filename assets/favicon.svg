@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Vellitas">
+  <rect width="64" height="64" rx="13" fill="#020b14"/>
+  <path d="M13 15 31.8 50 51 15h-9.8l-9.3 18.2L22.8 15H13Z" fill="#25d8f5"/>
+  <circle cx="51" cy="15" r="3" fill="#ff6a2a"/>
+</svg>
