@@ -32,7 +32,7 @@ The production host is the Ubuntu server reached with `ssh surf` at `135.148.44.
 Nginx serves the site directly and proxies only `/api/contact` to a small local Python service.
 PostgreSQL, Node.js, PHP, WordPress, and a build step are not required.
 
-- Release directory: `/var/www/vellitas.com/releases/20260918T040821Z`
+- Release directory: `/var/www/vellitas.com/releases/20260918T054258Z`
 - Active release: `/var/www/vellitas.com/current`
 - Nginx site: `/etc/nginx/sites-available/vellitas.com`
 - Enabled site: `/etc/nginx/sites-enabled/vellitas.com`

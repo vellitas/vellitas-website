@@ -95,9 +95,18 @@ Certbot installed the certificate for `vellitas.com` and `www.vellitas.com` and 
 ssh surf 'sudo certbot renew --dry-run'
 ```
 
-## Current launch release
+## Current production release
 
-The current revision was deployed as `/var/www/vellitas.com/releases/20260918T040821Z` on September 18, 2026. The contact service runs from `/opt/vellitas-contact/releases/20260918T041542Z`. This revision includes the three-person leadership section, methodology and product-status sections, the subscription and remediation lifecycle, the protected briefing form, illustrative report, privacy and data-practices notices, four-state vector shield assets, structured organization data, Search Console verification, and updated sitemap.
+Website commit `ba98ded` was deployed as `/var/www/vellitas.com/releases/20260918T054258Z`
+on September 18, 2026. The immediately preceding rollback release is
+`/var/www/vellitas.com/releases/20260918T040821Z`. The contact service remains at
+`/opt/vellitas-contact/releases/20260918T041542Z`.
+
+The current website includes the corrected blue-shield header logo, matching report and favicon
+vectors, system/light/dark theme selection, protected external-link behavior, refreshed social
+preview, the three-person leadership section, methodology and product-status sections, the
+subscription and remediation lifecycle, the protected briefing form, illustrative report, privacy
+and data-practices notices, structured organization data, Search Console verification, and sitemap.
 
 Google Search Console ownership for the canonical URL-prefix property was verified with an HTML meta tag, and `sitemap.xml` was accepted successfully with three discovered pages.
 
