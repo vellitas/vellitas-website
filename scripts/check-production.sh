@@ -20,6 +20,7 @@ grep -Fq '<title>Vellitas | Outside-In Digital Certificate Intelligence</title>'
 grep -Fq 'contact@vellitas.com' "$body_file"
 grep -Fq 'Spencer Shearer' "$body_file"
 grep -Fq 'Seth Shearer' "$body_file"
+grep -Fq 'Fraser Mackenzie' "$body_file"
 
 for header in \
   'Strict-Transport-Security:' \

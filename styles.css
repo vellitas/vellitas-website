@@ -1211,8 +1211,8 @@ button {
 
 .leadership__grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: clamp(28px, 5vw, 78px);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(28px, 3.5vw, 56px);
   margin-top: 86px;
 }
 
@@ -1771,6 +1771,10 @@ button {
   .capability-rail {
     grid-template-columns: repeat(3, 1fr);
     row-gap: 26px;
+  }
+
+  .leadership__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .capability-rail li:nth-child(3) { border-right: 0; }

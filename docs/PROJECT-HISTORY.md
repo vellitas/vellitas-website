@@ -27,6 +27,7 @@ The content and information architecture were developed from the supplied Vellit
 - Uses a corrected intrinsic aspect ratio for the hero globe so it remains spherical across desktop viewport sizes.
 - Sends all calls to action to the role alias `contact@vellitas.com`.
 - Identifies Vellitas, LLC as a Wyoming company and introduces cofounders Spencer Shearer and Seth Shearer using biographies derived from their public LinkedIn profiles.
+- Introduces Fraser Mackenzie as Chief Product & Technology Officer, reflecting his product vision, enterprise architecture, metadata, digital transformation, and AI experience.
 - Includes a clearly labeled illustrative remediation report, a privacy notice, and organization structured data.
 - Monitors the production pages, redirect behavior, security headers, and TLS certificate lifetime through an hourly GitHub Actions workflow.
 

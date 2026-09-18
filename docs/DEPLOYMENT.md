@@ -68,7 +68,7 @@ ssh surf 'sudo certbot renew --dry-run'
 
 ## Current launch release
 
-The v1 launch-readiness revision was deployed as `/var/www/vellitas.com/releases/20260917T070434Z` on September 17, 2026. It includes the leadership section, illustrative remediation report, privacy notice, structured organization data, Search Console verification, and updated sitemap.
+The current v1 revision was deployed as `/var/www/vellitas.com/releases/20260918T023044Z` on September 17, 2026. It includes the three-person leadership section, illustrative remediation report, privacy notice, structured organization data, Search Console verification, and updated sitemap.
 
 Google Search Console ownership for the canonical URL-prefix property was verified with an HTML meta tag, and `sitemap.xml` was accepted successfully with three discovered pages.
 

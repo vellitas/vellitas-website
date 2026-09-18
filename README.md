@@ -10,6 +10,7 @@ A dependency-free static website for `vellitas.com`. It can be hosted directly o
 - `docs/DEPLOYMENT.md`: DNS, HTTPS, release, and rollback procedures
 - `docs/EMAIL.md`: the public contact alias and email-security notes
 - `docs/PROJECT-HISTORY.md`: product narrative and implementation record
+- `docs/PRODUCT-ROADMAP.md`: patent-grounded product opportunities and website priorities
 - `scripts/check-production.sh`: production availability, redirect, header, and TLS checks
 - `.github/workflows/site-health.yml`: hourly production monitoring through GitHub Actions
 
@@ -28,7 +29,7 @@ Then open `http://localhost:4173`.
 The production host is the Ubuntu server reached with `ssh surf` at `135.148.44.243`.
 Nginx serves the site directly; PostgreSQL and an application runtime are not required.
 
-- Release directory: `/var/www/vellitas.com/releases/20260917T070434Z`
+- Release directory: `/var/www/vellitas.com/releases/20260918T023044Z`
 - Active release: `/var/www/vellitas.com/current`
 - Nginx site: `/etc/nginx/sites-available/vellitas.com`
 - Enabled site: `/etc/nginx/sites-enabled/vellitas.com`
