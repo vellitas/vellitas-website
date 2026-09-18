@@ -15,6 +15,13 @@ The product narrative is:
 
 The report is intended to be actionable by corporate security, internal IT, or a company's third-party technology provider.
 
+The public evidence section documents how vendor credentials, embedded third-party code, managed
+service software, trusted updates, stolen certificates, fraudulent issuance, and TLS defects have
+created real attack paths. Large incidents and downstream small-business impacts are presented with
+authoritative sources and explicit product boundaries. The site maps relevant observations to IETF,
+NIST, CISA, and PCI guidance without claiming certification. Continuous Certificate Transparency
+ingestion remains a documented roadmap capability until production operation is verified.
+
 ## Inputs
 
 The content and information architecture were developed from the supplied Vellitas problem/solution, patent-description, and key-selling-points presentations. Those source presentations are not copied into this public repository.

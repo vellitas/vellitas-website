@@ -55,11 +55,17 @@ The public patent family describes internet-wide certificate discovery, combinin
 
 ## Adjacent outside-in capabilities
 
-- Certificate Transparency monitoring for early warning when a related certificate is issued.
+- Continuous Certificate Transparency ingestion for early warning when a related certificate is
+  issued. Correlate issuer, serial number, fingerprint, public-key hash, SANs, log timestamp,
+  DNS, IP, ASN, provider, geolocation, current deployments, and customer-approved policy. Suppress
+  known renewals and approved CDN or cloud patterns before notification.
 - An attack-surface graph connecting certificates, domains, DNS, IP addresses, autonomous systems, cloud providers, ports, and externally visible services.
 - Domain and DNS posture checks covering CAA, DNSSEC, SPF, DKIM, DMARC, dangling records, and takeover indicators.
 - Web-edge posture including HTTPS redirects, HSTS, security headers, exposed administrative interfaces, and obsolete protocols.
-- Vendor and subsidiary exposure views that separate first-party assets from hosted, acquired, or third-party infrastructure.
+- Vendor and subsidiary exposure views that separate first-party assets from hosted, acquired, or
+  third-party infrastructure. Maintain the customer-to-vendor relationship, the business service,
+  access level, authorized assessment scope, criticality, required baseline, exceptions, and most
+  recent verification result.
 - API, webhook, SIEM, and ticketing integrations with ownership, due dates, retest status, and evidence attachments.
 - Exposure trends and an executive score based on observed evidence, severity, duration, recurrence, and remediation progress.
 
@@ -70,6 +76,27 @@ The proposed portal is a roadmap capability. It must not expose a global certifi
 Onboarding begins with customer-provided seed domains, brands, subsidiaries, acquisitions, approved networks, and cloud accounts. Vellitas then uses public certificate, SAN, Certificate Transparency, DNS, reverse-DNS, RDAP, ASN, redirect, and shared-infrastructure signals to propose related assets. A candidate remains in a review queue until ownership or assessment authority is confirmed, ideally with DNS TXT proof and otherwise through documented manual approval. Quarterly scope confirmation and ownership-change checks reduce stale authorization.
 
 Once approved, the customer can search and filter only its tenant-scoped portfolio—for example, self-signed certificates, a specific business unit, issuer, region, or remediation state. Narrowing and expanding a query changes only filters within the approved portfolio; it never expands authorization. See [Customer portal architecture](CUSTOMER-PORTAL.md).
+
+## Vendor assurance model
+
+Vendor assurance is a continuous use case rather than a one-time procurement questionnaire. A
+customer should identify vendors whose software, code, identity, remote access, hosted service, or
+network connection could affect its operations or data. Vellitas can then apply a customer-approved
+outside-in baseline proportionate to that relationship.
+
+The initial baseline should include certificate validity and chain health, unexpected issuers,
+certificate and public-key reuse, supported TLS versions and cipher suites, DNS and nameserver
+posture, observed IP/ASN/provider/geography, exposed administrative or appliance interfaces within
+scope, and historical change. Continuous checks should identify material drift and attach the
+observed evidence, confidence, customer policy, responsible party, and retest requirement.
+
+Passive public sources such as Certificate Transparency and DNS history may identify a candidate
+vendor exposure. Active assessment must remain within written authorization. A vendor anomaly does
+not establish compromise and must be validated against legitimate CDN, cloud, disaster-recovery,
+acquisition, and subcontractor patterns.
+
+The evidence and standards supporting this model are maintained in
+[Evidence, vendor risk, and standards](EVIDENCE-AND-STANDARDS.md).
 
 ## Remediation automation safeguards
 

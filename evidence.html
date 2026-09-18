@@ -1,0 +1,351 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Documented certificate, TLS, DNS, and third-party incidents supporting continuous outside-in vendor and attack-surface assessment."
+    />
+    <meta name="theme-color" content="#020b14" />
+    <link rel="canonical" href="https://vellitas.com/evidence.html" />
+    <link rel="icon" href="assets/favicon.svg?v=20260918-2" type="image/svg+xml" />
+    <link rel="stylesheet" href="styles.css?v=20260918-4" />
+    <title>Security Evidence &amp; Standards | Vellitas</title>
+  </head>
+  <body class="content-page">
+    <a class="skip-link" href="#main-content">Skip to content</a>
+
+    <header class="site-header" data-header>
+      <a class="wordmark wordmark--on-dark" href="index.html#top" aria-label="Vellitas home">
+        <img src="assets/vellitas-logo-on-dark.svg?v=20260918-2" width="1813" height="450" alt="" />
+      </a>
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-label="Open navigation"
+        aria-expanded="false"
+        aria-controls="site-navigation"
+        data-menu-toggle
+      ><span></span><span></span></button>
+      <nav class="site-nav" id="site-navigation" aria-label="Primary navigation" data-menu>
+        <a href="index.html#problem">Problem</a>
+        <a href="index.html#platform">Platform</a>
+        <a href="index.html#methodology">Methodology</a>
+        <a href="evidence.html" aria-current="page">Evidence</a>
+        <a href="index.html#patents">Patents</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+      <div class="header-actions">
+        <a class="button button--header" href="index.html#contact">Talk to Vellitas</a>
+      </div>
+    </header>
+
+    <main id="main-content">
+      <section class="report-hero evidence-hero" aria-labelledby="evidence-heading">
+        <div class="section-shell report-hero__layout">
+          <div>
+            <p class="eyebrow">Independent evidence</p>
+            <h1 id="evidence-heading">A vendor's exposed edge can become your attack path.</h1>
+            <p>
+              Organizations inherit risk through remote access, embedded software, trusted updates,
+              identity providers, managed services, and connected infrastructure. Outside-in
+              assessment provides independent evidence that a vendor's public-facing controls still
+              meet the minimum security expectations attached to that trust.
+            </p>
+          </div>
+          <aside class="report-summary evidence-summary" aria-label="Third-party risk principle">
+            <span>Third-party risk</span>
+            <strong>Trust extends the attack surface.</strong>
+            <dl>
+              <div><dt>Assess</dt><dd>Before access</dd></div>
+              <div><dt>Observe</dt><dd>During service</dd></div>
+              <div><dt>Reverify</dt><dd>After change</dd></div>
+            </dl>
+          </aside>
+        </div>
+      </section>
+
+      <section class="evidence-section section" aria-labelledby="vendor-cases-heading">
+        <div class="section-shell">
+          <div class="section-heading reveal">
+            <p class="eyebrow">Documented vendor pathways</p>
+            <h2 id="vendor-cases-heading">The dependency can be large or very small.</h2>
+            <p>
+              These cases show different ways a supplier or connected service became part of the
+              attack path. They support continuous vendor assurance, but they do not imply that a
+              certificate assessment alone would have prevented every incident.
+            </p>
+          </div>
+
+          <div class="incident-grid">
+            <article class="incident-card reveal">
+              <div class="incident-card__meta"><span>2013</span><span>Vendor credentials</span></div>
+              <h3>Target and a small HVAC contractor</h3>
+              <p>
+                A U.S. Senate staff analysis reported that attackers stole credentials from Fazio
+                Mechanical Services, a small Pennsylvania HVAC contractor with remote access for
+                billing and project work. The attackers used vendor access as a foothold into
+                Target, where information relating to as many as 110 million customers was taken.
+              </p>
+              <p class="incident-card__signal"><strong>Control lesson:</strong> supplier access,
+                multifactor authentication, least privilege, segmentation, and continuous review
+                must match the risk created by the connection.</p>
+              <a href="https://www.commerce.senate.gov/public/_cache/files/24d3c229-4f2f-405d-b8db-a3a67f183883/23E30AA955B5C00FE57CFD709621592C.2014-0325-target-kill-chain-analysis.pdf" target="_blank" rel="noopener noreferrer">U.S. Senate staff report</a>
+            </article>
+
+            <article class="incident-card reveal">
+              <div class="incident-card__meta"><span>2018</span><span>Embedded third-party code</span></div>
+              <h3>Ticketmaster and Inbenta</h3>
+              <p>
+                The UK Information Commissioner's Office found that an attacker inserted malicious
+                code into a third-party chatbot hosted by Inbenta. Because Ticketmaster placed that
+                code on payment pages, it could collect names, payment-card details, CVVs, usernames,
+                and passwords entered by customers.
+              </p>
+              <p class="incident-card__signal"><strong>Control lesson:</strong> externally loaded
+                scripts and services operate inside the customer experience and require inventory,
+                integrity controls, monitoring, and removal when their risk exceeds their value.</p>
+              <a href="https://ico.org.uk/media/action-weve-taken/mpns/2618599/ticketmaster-uk-limited-mpn.pdf" target="_blank" rel="noopener noreferrer">UK ICO penalty notice</a>
+            </article>
+
+            <article class="incident-card reveal">
+              <div class="incident-card__meta"><span>2021</span><span>MSP management software</span></div>
+              <h3>Kaseya and downstream businesses</h3>
+              <p>
+                Attackers exploited zero-day vulnerabilities in Kaseya VSA and used normal product
+                functionality to deploy ransomware. Kaseya reported fewer than 60 directly affected
+                customers, many of them service providers, and fewer than 1,500 downstream businesses.
+              </p>
+              <p class="incident-card__signal"><strong>Control lesson:</strong> one privileged
+                management platform can concentrate risk across many smaller organizations that may
+                never contract directly with the original software vendor.</p>
+              <a href="https://helpdesk.kaseya.com/hc/en-gb/articles/4403584098961-Incident-Overview-Technical-Details" target="_blank" rel="noopener noreferrer">Kaseya technical overview</a>
+            </article>
+
+            <article class="incident-card reveal">
+              <div class="incident-card__meta"><span>2020</span><span>Trusted software update</span></div>
+              <h3>SolarWinds Orion</h3>
+              <p>
+                CISA documented that an advanced actor added malicious code to multiple versions of
+                the SolarWinds Orion platform. Selected government, critical-infrastructure, and
+                private-sector customers then experienced persistent access, identity compromise,
+                and sensitive-data exfiltration.
+              </p>
+              <p class="incident-card__signal"><strong>Control lesson:</strong> vendor approval is
+                not permanent. Trusted software, signing systems, update channels, and externally
+                visible changes require continuing verification and incident coordination.</p>
+              <a href="https://www.cisa.gov/sites/default/files/publications/CISA_Insights_SolarWinds-and-AD-M365-Compromise-Risk-Decisions-for-Leaders.pdf" target="_blank" rel="noopener noreferrer">CISA incident guidance</a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="evidence-section evidence-section--alternate section" aria-labelledby="certificate-cases-heading">
+        <div class="section-shell">
+          <div class="section-heading reveal">
+            <p class="eyebrow">Certificate and TLS pathways</p>
+            <h2 id="certificate-cases-heading">Public trust signals have been abused in real attacks.</h2>
+            <p>
+              Certificate, DNS, network, geographic, and historical evidence becomes more valuable
+              when it is correlated. No single anomaly proves compromise; combinations of unexpected
+              changes can identify where investigation should begin.
+            </p>
+          </div>
+
+          <div class="incident-grid incident-grid--compact">
+            <article class="incident-card reveal">
+              <div class="incident-card__meta"><span>2017–2019</span><span>Stolen certificates</span></div>
+              <h3>Sea Turtle</h3>
+              <p>
+                Cisco Talos documented DNS hijacking, legitimate CA-signed impersonation
+                certificates, and stolen SSL certificates deployed on actor-controlled servers to
+                harvest credentials. Talos identified at least 40 organizations across 13 countries.
+              </p>
+              <p class="incident-card__signal"><strong>Observable clues:</strong> certificate or
+                public-key reuse on a new IP, ASN, provider, or country; DNS drift; issuer changes;
+                self-signed appliance certificates; and short-lived deployments.</p>
+              <a href="https://blog.talosintelligence.com/seaturtle/" target="_blank" rel="noopener noreferrer">Cisco Talos investigation</a>
+            </article>
+
+            <article class="incident-card reveal">
+              <div class="incident-card__meta"><span>2011</span><span>Fraudulent issuance</span></div>
+              <h3>DigiNotar</h3>
+              <p>
+                A compromised certificate authority issued fraudulent certificates for Google and
+                other services. ENISA reported that false certificates were used to eavesdrop on
+                users in Iran and noted roughly 300,000 Iranian OCSP requests as an estimate—not a
+                definitive victim count.
+              </p>
+              <p class="incident-card__signal"><strong>Observable clues:</strong> an unexpected CA,
+                unauthorized issuance, unusual geographic concentration, and infrastructure that
+                does not match the legitimate operator.</p>
+              <a href="https://www.enisa.europa.eu/sites/default/files/all_files/Operation_Black_Tulip_v2.pdf" target="_blank" rel="noopener noreferrer">ENISA analysis</a>
+            </article>
+
+            <article class="incident-card reveal">
+              <div class="incident-card__meta"><span>2017</span><span>Expired monitoring certificate</span></div>
+              <h3>Equifax</h3>
+              <p>
+                A U.S. House investigation found that an internal certificate used to inspect
+                encrypted traffic had expired 19 months before the breach was discovered, limiting
+                visibility into data exfiltration affecting approximately 148 million people. The
+                initial entry point was an unpatched Apache Struts vulnerability.
+              </p>
+              <p class="incident-card__signal"><strong>Boundary:</strong> the failed certificate was
+                internal and would not necessarily be visible to Vellitas's standard public-facing
+                assessment.</p>
+              <a href="https://oversight.house.gov/wp-content/uploads/2018/12/Equifax-Report.pdf" target="_blank" rel="noopener noreferrer">U.S. House investigation</a>
+            </article>
+
+            <article class="incident-card reveal">
+              <div class="incident-card__meta"><span>2014</span><span>TLS implementation defect</span></div>
+              <h3>Canadian government Heartbleed breach</h3>
+              <p>
+                A Government of Canada review documented remote exploitation and data exfiltration
+                through the OpenSSL Heartbleed flaw across 12 departments, including at least 900
+                taxpayer Social Insurance Numbers.
+              </p>
+              <p class="incident-card__signal"><strong>Boundary:</strong> certificate metadata alone
+                cannot detect Heartbleed. Safe TLS implementation testing is a separately governed
+                adjacent capability, not a current certificate-only claim.</p>
+              <a href="https://www.canada.ca/content/dam/nsicop-cpsnr/documents/2022-cyber-attack-framework-report-en.pdf" target="_blank" rel="noopener noreferrer">Government of Canada review</a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="correlation-section section" aria-labelledby="correlation-heading">
+        <div class="section-shell correlation-layout">
+          <div class="reveal">
+            <p class="eyebrow">Correlated evidence</p>
+            <h2 id="correlation-heading">One signal raises a question. Several signals establish priority.</h2>
+            <p>
+              Vellitas should correlate the following observations across approved customer and
+              vendor scope. Continuous Certificate Transparency ingestion and event-driven issuance
+              alerts remain explicit roadmap capabilities until production implementation is verified.
+            </p>
+          </div>
+          <ul class="correlation-list reveal">
+            <li>Certificate fingerprint and public-key reuse across IP addresses</li>
+            <li>New countries, ASNs, cloud providers, or hosting networks</li>
+            <li>Certificate Transparency issuance and unexpected issuers</li>
+            <li>DNS A, AAAA, CNAME, MX, and NS changes</li>
+            <li>Short-lived certificate and DNS changes</li>
+            <li>New or unusual subject alternative names</li>
+            <li>Self-signed and temporary appliance certificates</li>
+            <li>Revocation, OCSP, and certificate-chain status</li>
+            <li>TLS versions, accepted cipher suites, and downgrade exposure</li>
+            <li>Historical first-seen, last-seen, and infrastructure movement</li>
+          </ul>
+        </div>
+        <div class="section-shell anomaly-note reveal">
+          <strong>Geography is context—not a verdict.</strong>
+          <p>
+            A certificate appearing in a new country or network is a risk signal rather than proof
+            of compromise. CDNs, cloud migrations, disaster recovery, acquisitions, and authorized
+            service providers can produce legitimate changes. Vellitas combines location with
+            certificate, DNS, network ownership, history, and customer policy before assigning
+            confidence or recommending action.
+          </p>
+        </div>
+      </section>
+
+      <section class="standards-section section" id="standards" aria-labelledby="standards-heading">
+        <div class="section-shell">
+          <div class="section-heading reveal">
+            <p class="eyebrow">Reference framework</p>
+            <h2 id="standards-heading">Findings should explain the standard behind the expectation.</h2>
+            <p>
+              Vellitas uses authoritative guidance where it is relevant to the observed evidence
+              and the customer's industry. Referencing a standard does not mean Vellitas or the
+              customer is certified against it.
+            </p>
+          </div>
+
+          <div class="standards-grid">
+            <article class="standard-card reveal">
+              <span>TLS baseline</span>
+              <h3>IETF RFC 8996</h3>
+              <p>TLS 1.0 and TLS 1.1 are formally deprecated because they lack modern cryptographic protections and increase downgrade and misconfiguration risk.</p>
+              <a href="https://datatracker.ietf.org/doc/html/rfc8996" target="_blank" rel="noopener noreferrer">Read RFC 8996</a>
+            </article>
+            <article class="standard-card reveal">
+              <span>TLS configuration</span>
+              <h3>NIST SP 800-52 Rev. 2</h3>
+              <p>NIST requires modern TLS and approved cipher suites for federal systems and provides guidance for certificates and security-relevant TLS extensions.</p>
+              <a href="https://csrc.nist.gov/pubs/sp/800/52/r2/final" target="_blank" rel="noopener noreferrer">Read the NIST publication</a>
+            </article>
+            <article class="standard-card reveal">
+              <span>DNS tampering</span>
+              <h3>CISA Certificate Transparency guidance</h3>
+              <p>CISA recommends monitoring Certificate Transparency logs as part of reducing the risk created by DNS infrastructure tampering and traffic redirection.</p>
+              <a href="https://www.cisa.gov/sites/default/files/publications/CISAInsights-Cyber-MitigateDNSInfrastructureTampering_S508C.pdf" target="_blank" rel="noopener noreferrer">Read the CISA guidance</a>
+            </article>
+            <article class="standard-card reveal">
+              <span>Supplier governance</span>
+              <h3>NIST CSF 2.0 · GV.SC</h3>
+              <p>The supply-chain category calls for known and prioritized suppliers, defined requirements, due diligence, ongoing assessment, monitoring, and incident coordination.</p>
+              <a href="https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.1305.pdf" target="_blank" rel="noopener noreferrer">Read the NIST quick-start guide</a>
+            </article>
+            <article class="standard-card reveal">
+              <span>Supply-chain risk</span>
+              <h3>NIST SP 800-161 Rev. 1</h3>
+              <p>NIST provides a structured program for identifying, assessing, and mitigating cybersecurity risks in products and services across the supply chain.</p>
+              <a href="https://csrc.nist.gov/pubs/sp/800/161/r1/upd1/final" target="_blank" rel="noopener noreferrer">Read the NIST publication</a>
+            </article>
+            <article class="standard-card reveal">
+              <span>Managed services</span>
+              <h3>CISA, NSA, FBI and partner guidance</h3>
+              <p>Customers should place security measures in vendor contracts, protect remote access, require MFA where possible, and enable monitoring and logging.</p>
+              <a href="https://www.cisa.gov/news-events/news/cisa-nsa-fbi-and-international-cyber-authorities-issue-cybersecurity-advisory-protect-managed" target="_blank" rel="noopener noreferrer">Read the joint guidance</a>
+            </article>
+            <article class="standard-card reveal">
+              <span>Payment environments</span>
+              <h3>PCI DSS Requirement 12.8</h3>
+              <p>Where applicable, organizations must manage and oversee third-party service-provider relationships and monitor their PCI DSS compliance status at least annually.</p>
+              <a href="https://www.pcisecuritystandards.org/faqs/1312/" target="_blank" rel="noopener noreferrer">Read the PCI SSC guidance</a>
+            </article>
+          </div>
+
+          <blockquote class="evidence-statement reveal">
+            <p>
+              Attackers have used misissued and stolen certificates, DNS hijacking, and
+              actor-controlled infrastructure to impersonate trusted services and harvest
+              credentials. Vellitas correlates certificate, DNS, network, geographic, and
+              historical evidence to surface changes that warrant investigation.
+            </p>
+          </blockquote>
+        </div>
+      </section>
+
+      <section class="report-cta">
+        <div class="section-shell report-cta__layout">
+          <h2>Verify the public controls behind the trust you place in a vendor.</h2>
+          <a class="button button--primary" href="index.html#contact">Request a briefing</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="section-shell site-footer__layout">
+        <a class="wordmark wordmark--on-dark" href="index.html#top" aria-label="Vellitas home">
+          <img src="assets/vellitas-logo-on-dark.svg?v=20260918-2" width="1813" height="450" alt="" />
+        </a>
+        <nav aria-label="Footer navigation">
+          <a href="index.html#problem">Problem</a>
+          <a href="index.html#platform">Platform</a>
+          <a href="index.html#methodology">Methodology</a>
+          <a href="evidence.html" aria-current="page">Evidence</a>
+          <a href="index.html#contact">Contact</a>
+          <a href="privacy.html">Privacy</a>
+          <a href="data-practices.html">Data &amp; scanning</a>
+        </nav>
+        <p>© <span data-year>2026</span> Vellitas, LLC · Wyoming</p>
+      </div>
+    </footer>
+    <noscript><style>.reveal { opacity: 1; transform: none; }</style></noscript>
+    <script src="script.js?v=20260918-4" defer></script>
+  </body>
+</html>

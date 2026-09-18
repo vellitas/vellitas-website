@@ -4,7 +4,7 @@ A dependency-free static website for `vellitas.com`. It can be hosted directly o
 
 ## Repository contents
 
-- `index.html`, `styles.css`, and `script.js`: the production website
+- `index.html`, `evidence.html`, `styles.css`, and `script.js`: the production website and sourced evidence page
 - `assets/`: original website artwork and identity assets
 - `deploy/nginx/vellitas.com.conf`: the production Nginx virtual host and contact-form proxy
 - `services/contact-form/`: the dependency-free, same-origin briefing-form service
@@ -12,6 +12,7 @@ A dependency-free static website for `vellitas.com`. It can be hosted directly o
 - `docs/EMAIL.md`: the public contact alias and email-security notes
 - `docs/PROJECT-HISTORY.md`: product narrative and implementation record
 - `docs/PRODUCT-ROADMAP.md`: patent-grounded product opportunities and website priorities
+- `docs/EVIDENCE-AND-STANDARDS.md`: incident sources, claim boundaries, CT requirements, and standards mapping
 - `docs/CUSTOMER-PORTAL.md`: tenant isolation, scope onboarding, search, and remediation controls
 - `scripts/check-production.sh`: production availability, redirect, header, and TLS checks
 - `.github/workflows/site-health.yml`: hourly production monitoring through GitHub Actions
