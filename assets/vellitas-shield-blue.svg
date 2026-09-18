@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 112" role="img" aria-labelledby="title">
+  <title id="title">Vellitas blue shield</title>
+  <defs>
+    <clipPath id="shield"><path d="M48 4c15 10 30 16 44 18v37c0 22-15 39-44 49C19 98 4 81 4 59V22C18 20 33 14 48 4Z"/></clipPath>
+    <clipPath id="left"><rect width="48" height="112"/></clipPath>
+    <clipPath id="right"><rect x="48" width="48" height="112"/></clipPath>
+  </defs>
+  <path d="M48 4c15 10 30 16 44 18v37c0 22-15 39-44 49C19 98 4 81 4 59V22C18 20 33 14 48 4Z" fill="#167db8" clip-path="url(#right)"/>
+  <g clip-path="url(#shield)" stroke="#8c99a5" stroke-width="3" stroke-linecap="round" opacity=".9">
+    <path d="M-8 18h51M-8 26h51M-8 34h51M-8 42h51M-8 50h51M-8 58h51M-8 66h51M-8 74h51M-8 82h51M-8 90h51M-8 98h51"/>
+  </g>
+  <path d="M48 4c15 10 30 16 44 18v37c0 22-15 39-44 49C19 98 4 81 4 59V22C18 20 33 14 48 4Z" fill="none" stroke="#d4dde5" stroke-opacity=".28"/>
+</svg>

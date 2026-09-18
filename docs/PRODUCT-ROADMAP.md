@@ -2,6 +2,34 @@
 
 This document translates public Vellitas patent records into product-planning opportunities. It is not a legal opinion, a claim-construction analysis, or a statement that every listed capability is currently available. Public-facing material should distinguish shipped features from roadmap items.
 
+## Product status definitions
+
+- **Available now**: delivered through the current Vellitas assessment and report workflow.
+- **Near-term roadmap**: the next productization work after the real report is normalized into a repeatable evidence model.
+- **Future roadmap**: a validated direction that still requires design, security review, and delivery planning.
+
+The website status colors are blue for the Vellitas assessment, green for pass, yellow for caution, and red for immediate action. They communicate assessment outcome, not roadmap maturity.
+
+## Available now
+
+- Internet-visible certificate discovery for approved customer scope.
+- DNS, reverse DNS, network, geospatial, configuration, and historical enrichment.
+- Certificate health, expiration, self-signed certificate, weak configuration, unusual-location, name-encroachment, and historical-change analysis.
+- Evidence-based reporting with corrective work and an outside-in verification test.
+- Consultant-led remediation or collaboration with the customer's security, IT, and technology providers.
+
+## Subscription operating model
+
+Vellitas is a continuous service rather than a one-time report. The standard lifecycle is:
+
+1. Confirm the customer's authorized scope and establish a baseline.
+2. Deliver the initial assessment report and prioritized remediation plan.
+3. Complete the corrective work through Vellitas consultants, the customer's team, or a shared delivery model.
+4. Reobserve affected endpoints and record verified closure.
+5. Continue monitoring the external security profile and notify the customer when a validated change requires action.
+
+The standard planning cadence is a full onboarding baseline, daily review of changed or newly discovered endpoints, weekly portfolio reassessment, monthly reporting, quarterly scope confirmation, and on-demand retesting after remediation. Customer contracts define actual service levels and notification timing.
+
 ## Capabilities supported by the patent family
 
 The public patent family describes internet-wide certificate discovery, combining certificate contents with external observations, querying for vulnerable certificates, comparing expected and observed information, preserving changes over time, and notifying customers or requesting corrective action.
@@ -35,6 +63,18 @@ The public patent family describes internet-wide certificate discovery, combinin
 - API, webhook, SIEM, and ticketing integrations with ownership, due dates, retest status, and evidence attachments.
 - Exposure trends and an executive score based on observed evidence, severity, duration, recurrence, and remediation progress.
 
+## Customer portal and scope control
+
+The proposed portal is a roadmap capability. It must not expose a global certificate search to customers. Every asset, observation, finding, report, remediation artifact, script, and query must be bound to a tenant identifier and enforced with deny-by-default authorization at the data layer.
+
+Onboarding begins with customer-provided seed domains, brands, subsidiaries, acquisitions, approved networks, and cloud accounts. Vellitas then uses public certificate, SAN, Certificate Transparency, DNS, reverse-DNS, RDAP, ASN, redirect, and shared-infrastructure signals to propose related assets. A candidate remains in a review queue until ownership or assessment authority is confirmed, ideally with DNS TXT proof and otherwise through documented manual approval. Quarterly scope confirmation and ownership-change checks reduce stale authorization.
+
+Once approved, the customer can search and filter only its tenant-scoped portfolio—for example, self-signed certificates, a specific business unit, issuer, region, or remediation state. Narrowing and expanding a query changes only filters within the approved portfolio; it never expands authorization. See [Customer portal architecture](CUSTOMER-PORTAL.md).
+
+## Remediation automation safeguards
+
+Generated remediation scripts are a roadmap capability and must be treated as controlled change artifacts, not autonomous fixes. Every script should be versioned, tied to a specific finding and target, reviewed by Vellitas and the customer, support a dry-run or preview where the platform permits it, require explicit approval, preserve output and rollback guidance, and be verified from the outside after execution. Automatic execution is off by default.
+
 ## Recommended sequence
 
 ### First
@@ -43,17 +83,21 @@ The public patent family describes internet-wide certificate discovery, combinin
 - Add historical observations and same-certificate or same-key deployment detection.
 - Add customer-defined expected locations, networks, issuers, and protocol policies.
 - Produce remediation instructions and an outside-in verification result for every finding.
+- Apply the public data-retention and responsible-scanning baseline and support contract-specific overrides.
 
 ### Next
 
 - Add Certificate Transparency and name-encroachment monitoring.
 - Add alerting, ticket creation, ownership, retest, and audit history.
 - Add an attack-surface graph and vendor attribution.
+- Launch tenant-scoped portfolio search with candidate-scope review, RBAC, SSO/MFA, and audit logging.
+- Generate reviewed, versioned remediation scripts with dry-run, approval, and rollback controls.
 
 ### Later
 
 - Add approved automated actions, including revocation or removal requests, only with strong authorization controls and human review.
 - Expand into broader DNS and web-edge posture after the certificate workflow is reliable and explainable.
+- Add per-tenant workflow integrations, customer-configured policy, and executive exposure trends.
 
 ## Website assessment
 

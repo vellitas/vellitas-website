@@ -6,11 +6,13 @@ A dependency-free static website for `vellitas.com`. It can be hosted directly o
 
 - `index.html`, `styles.css`, and `script.js`: the production website
 - `assets/`: original website artwork and identity assets
-- `deploy/nginx/vellitas.com.conf`: the production Nginx virtual host
+- `deploy/nginx/vellitas.com.conf`: the production Nginx virtual host and contact-form proxy
+- `services/contact-form/`: the dependency-free, same-origin briefing-form service
 - `docs/DEPLOYMENT.md`: DNS, HTTPS, release, and rollback procedures
 - `docs/EMAIL.md`: the public contact alias and email-security notes
 - `docs/PROJECT-HISTORY.md`: product narrative and implementation record
 - `docs/PRODUCT-ROADMAP.md`: patent-grounded product opportunities and website priorities
+- `docs/CUSTOMER-PORTAL.md`: tenant isolation, scope onboarding, search, and remediation controls
 - `scripts/check-production.sh`: production availability, redirect, header, and TLS checks
 - `.github/workflows/site-health.yml`: hourly production monitoring through GitHub Actions
 
@@ -27,14 +29,16 @@ Then open `http://localhost:4173`.
 ## Production deployment
 
 The production host is the Ubuntu server reached with `ssh surf` at `135.148.44.243`.
-Nginx serves the site directly; PostgreSQL and an application runtime are not required.
+Nginx serves the site directly and proxies only `/api/contact` to a small local Python service.
+PostgreSQL, Node.js, PHP, WordPress, and a build step are not required.
 
-- Release directory: `/var/www/vellitas.com/releases/20260918T023044Z`
+- Release directory: `/var/www/vellitas.com/releases/20260918T040821Z`
 - Active release: `/var/www/vellitas.com/current`
 - Nginx site: `/etc/nginx/sites-available/vellitas.com`
 - Enabled site: `/etc/nginx/sites-enabled/vellitas.com`
 - Access log: `/var/log/nginx/vellitas.access.log`
 - Error log: `/var/log/nginx/vellitas.error.log`
+- Contact-service release: `/opt/vellitas-contact/releases/20260918T041542Z`
 
 To publish a later revision, upload it to a new timestamped release directory, validate it,
 move the `current` symlink to that release, run `sudo nginx -t`, and reload Nginx. Keeping each
@@ -52,9 +56,16 @@ The apex is the canonical hostname. Nginx redirects `www.vellitas.com` to
 hostnames. The initial ECDSA certificate expires December 16, 2026; an immediate Certbot
 renewal simulation completed successfully after installation.
 
-## Contact action
+## Contact form
 
-All primary calls to action open a pre-addressed email to `contact@vellitas.com`, a Google Workspace alias routed to the company inbox.
+All primary calls to action lead to a same-origin briefing form. The service validates an exact
+field allowlist, normalizes and bounds input, applies origin, host, timing, honeypot, duplicate,
+and rate-limit controls, and writes parameterized records to a private SQLite database. Raw source
+IP addresses are not retained in the form database.
+
+Surf does not currently have a configured mail transport. Administrators review stored requests
+with the private `contactctl.py` command documented in `services/contact-form/README.md` until a
+transactional notification provider or Google Workspace relay is configured.
 
 SPF, DKIM, and monitoring-mode DMARC are published in Route 53. Gmail still needs the one-time **Send mail as** setup before replies can originate from the public alias.
 

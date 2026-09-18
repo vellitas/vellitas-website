@@ -21,6 +21,8 @@ grep -Fq 'contact@vellitas.com' "$body_file"
 grep -Fq 'Spencer Shearer' "$body_file"
 grep -Fq 'Seth Shearer' "$body_file"
 grep -Fq 'Fraser Mackenzie' "$body_file"
+grep -Fq 'id="contact-form"' "$body_file"
+grep -Fq 'id="methodology"' "$body_file"
 
 for header in \
   'Strict-Transport-Security:' \
@@ -41,7 +43,7 @@ if [[ "$effective_url" != "$site_url" ]]; then
   exit 1
 fi
 
-for page in sample-report.html privacy.html robots.txt sitemap.xml; do
+for page in sample-report.html privacy.html data-practices.html robots.txt sitemap.xml assets/vellitas-shield-blue.svg; do
   curl --fail --silent --show-error --max-time 25 --output /dev/null "https://vellitas.com/$page"
 done
 

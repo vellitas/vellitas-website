@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 120" role="img" aria-labelledby="title">
+  <title id="title">Vellitas</title>
+  <defs><clipPath id="shield"><path d="M52 7c15 10 29 15 43 17v34c0 21-14 36-43 46C23 94 9 79 9 58V24C23 22 37 17 52 7Z"/></clipPath><clipPath id="right"><rect x="52" width="48" height="112"/></clipPath></defs>
+  <path d="M52 7c15 10 29 15 43 17v34c0 21-14 36-43 46C23 94 9 79 9 58V24C23 22 37 17 52 7Z" fill="#167db8" clip-path="url(#right)"/>
+  <g clip-path="url(#shield)" stroke="#8c99a5" stroke-width="3" stroke-linecap="round"><path d="M-4 20h51M-4 28h51M-4 36h51M-4 44h51M-4 52h51M-4 60h51M-4 68h51M-4 76h51M-4 84h51M-4 92h51"/></g>
+  <text x="128" y="76" fill="#6c737b" font-family="Avenir Next,Segoe UI,Arial,sans-serif" font-size="54" font-weight="300" letter-spacing="10">VELLITAS</text>
+</svg>

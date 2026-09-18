@@ -7,6 +7,7 @@
   const sections = [...document.querySelectorAll("main section[id]")];
   const stageItems = [...document.querySelectorAll("[data-stage]")];
   const year = document.querySelector("[data-year]");
+  const contactForm = document.querySelector("#contact-form");
 
   if (year) {
     year.textContent = String(new Date().getFullYear());
@@ -84,4 +85,77 @@
       });
     });
   });
+
+  if (contactForm instanceof HTMLFormElement) {
+    const startedAt = contactForm.elements.namedItem("startedAt");
+    const submitButton = contactForm.querySelector("button[type='submit']");
+    const status = contactForm.querySelector("[role='status']");
+
+    const resetStartedAt = () => {
+      if (startedAt instanceof HTMLInputElement) startedAt.value = String(Date.now());
+    };
+
+    resetStartedAt();
+
+    contactForm.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      if (!contactForm.reportValidity()) return;
+
+      const formData = new FormData(contactForm);
+      const payload = {
+        name: String(formData.get("name") || ""),
+        email: String(formData.get("email") || ""),
+        organization: String(formData.get("organization") || ""),
+        role: String(formData.get("role") || ""),
+        message: String(formData.get("message") || ""),
+        consent: formData.get("consent") === "on",
+        website: String(formData.get("website") || ""),
+        startedAt: Number(formData.get("startedAt") || 0),
+      };
+
+      if (payload.message.trim().length < 20) {
+        const messageField = contactForm.elements.namedItem("message");
+        if (messageField instanceof HTMLTextAreaElement) {
+          messageField.setCustomValidity("Please tell us a little more about what you want to assess.");
+          messageField.reportValidity();
+          messageField.addEventListener("input", () => messageField.setCustomValidity(""), { once: true });
+        }
+        return;
+      }
+
+      contactForm.setAttribute("aria-busy", "true");
+      if (submitButton instanceof HTMLButtonElement) submitButton.disabled = true;
+      if (status) {
+        status.className = "contact-form__status";
+        status.textContent = "Sending your request…";
+      }
+
+      try {
+        const response = await fetch(contactForm.action, {
+          method: "POST",
+          headers: { "Content-Type": "application/json", Accept: "application/json" },
+          body: JSON.stringify(payload),
+          credentials: "same-origin",
+        });
+        const result = await response.json().catch(() => ({}));
+        if (!response.ok) throw new Error(result.error || "We could not send your request.");
+        contactForm.reset();
+        resetStartedAt();
+        if (status) {
+          status.className = "contact-form__status is-success";
+          status.textContent = "Thank you. Your request was received, and Vellitas will follow up.";
+        }
+      } catch (error) {
+        if (status) {
+          status.className = "contact-form__status is-error";
+          status.textContent = error instanceof Error
+            ? error.message
+            : "We could not send your request. Please try again shortly.";
+        }
+      } finally {
+        contactForm.removeAttribute("aria-busy");
+        if (submitButton instanceof HTMLButtonElement) submitButton.disabled = false;
+      }
+    });
+  }
 })();
