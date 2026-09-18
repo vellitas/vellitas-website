@@ -35,6 +35,10 @@ The content and information architecture were developed from the supplied Vellit
 - Monitors the production pages, redirect behavior, security headers, and TLS certificate lifetime through an hourly GitHub Actions workflow.
 - Distinguishes available capabilities from roadmap features and documents the customer portal, tenant isolation, responsible-scanning, retention, remediation automation, and continuous subscription model.
 - Includes transparent vector shield assets for the blue Vellitas mark, green pass, yellow caution, and red immediate-action states.
+- Rebuilds the complete logo family from the highest-resolution owner-supplied artwork, including a blue-shield header wordmark, shield-only report marks, and a matching favicon.
+- Defaults to the visitor's system color preference while providing a persistent system/light/dark control without analytics or server-side preference storage.
+- Opens external patent, LinkedIn, and public-roadmap links in a separate tab with `noopener noreferrer` protection and an assistive-technology announcement.
+- Refreshes the 1200×630 social-sharing image and organization logo metadata to match the production identity.
 
 ## Production record
 
