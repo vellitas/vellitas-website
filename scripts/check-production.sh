@@ -23,8 +23,12 @@ grep -Fq 'Seth Shearer' "$body_file"
 grep -Fq 'Fraser Mackenzie' "$body_file"
 grep -Fq 'id="contact-form"' "$body_file"
 grep -Fq 'id="methodology"' "$body_file"
-grep -Fq 'data-theme-toggle' "$body_file"
 grep -Fq 'vellitas-logo-on-dark.svg' "$body_file"
+
+if grep -Fq 'data-theme-toggle' "$body_file"; then
+  echo 'Unexpected light-mode selector remains in production HTML.' >&2
+  exit 1
+fi
 
 for header in \
   'Strict-Transport-Security:' \
@@ -45,7 +49,7 @@ if [[ "$effective_url" != "$site_url" ]]; then
   exit 1
 fi
 
-for page in sample-report.html privacy.html data-practices.html robots.txt sitemap.xml theme.js assets/vellitas-logo.svg assets/vellitas-logo-on-dark.svg assets/vellitas-shield-blue.svg assets/vellitas-shield-green.svg assets/vellitas-shield-yellow.svg assets/vellitas-shield-red.svg; do
+for page in sample-report.html privacy.html data-practices.html robots.txt sitemap.xml assets/vellitas-logo.svg assets/vellitas-logo-on-dark.svg assets/vellitas-shield-blue.svg assets/vellitas-shield-green.svg assets/vellitas-shield-yellow.svg assets/vellitas-shield-red.svg; do
   curl --fail --silent --show-error --max-time 25 --output /dev/null "https://vellitas.com/$page"
 done
 

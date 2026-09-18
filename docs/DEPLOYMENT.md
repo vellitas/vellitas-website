@@ -103,7 +103,7 @@ on September 18, 2026. The immediately preceding rollback release is
 `/opt/vellitas-contact/releases/20260918T041542Z`.
 
 The current website includes the corrected blue-shield header logo, matching report and favicon
-vectors, system/light/dark theme selection, protected external-link behavior, refreshed social
+vectors, the established dark presentation, protected external-link behavior, refreshed social
 preview, the three-person leadership section, methodology and product-status sections, the
 subscription and remediation lifecycle, the protected briefing form, illustrative report, privacy
 and data-practices notices, structured organization data, Search Console verification, and sitemap.

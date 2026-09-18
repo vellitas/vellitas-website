@@ -1,5 +1,5 @@
 :root {
-  color-scheme: dark light;
+  color-scheme: dark;
   --bg: #020b14;
   --bg-deep: #01070d;
   --surface: #071827;
@@ -18,22 +18,6 @@
   --max-width: 1500px;
   --radius: 10px;
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-html[data-theme="light"] {
-  --bg: #f4f7fa;
-  --bg-deep: #e8eef4;
-  --surface: #ffffff;
-  --surface-soft: #edf3f7;
-  --text: #102333;
-  --muted: #53697b;
-  --muted-strong: #354c5f;
-  --cyan: #007e9d;
-  --cyan-soft: #006c88;
-  --orange: #c94c16;
-  --line: rgba(23, 94, 121, 0.2);
-  --line-strong: rgba(0, 126, 157, 0.55);
-  --shadow: 0 18px 55px rgba(36, 63, 78, 0.14);
 }
 
 *,
@@ -165,18 +149,6 @@ button {
   height: auto;
 }
 
-.wordmark__light {
-  display: none;
-}
-
-html[data-theme="light"] .wordmark--adaptive .wordmark__dark {
-  display: none;
-}
-
-html[data-theme="light"] .wordmark--adaptive .wordmark__light {
-  display: block;
-}
-
 .site-nav {
   display: flex;
   align-items: center;
@@ -193,47 +165,6 @@ html[data-theme="light"] .wordmark--adaptive .wordmark__light {
   justify-self: end;
   gap: 14px;
   grid-area: actions;
-}
-
-.theme-toggle {
-  display: grid;
-  width: 44px;
-  height: 44px;
-  flex: 0 0 auto;
-  place-items: center;
-  border: 1px solid rgba(37, 216, 245, 0.34);
-  border-radius: 50%;
-  background: rgba(4, 22, 35, 0.68);
-  color: var(--muted-strong);
-  padding: 0;
-  cursor: pointer;
-  transition: border-color 180ms ease, color 180ms ease, background 180ms ease;
-}
-
-.theme-toggle:hover {
-  border-color: var(--cyan);
-  color: var(--cyan);
-  background: rgba(7, 35, 52, 0.94);
-}
-
-.theme-toggle svg {
-  width: 20px;
-  height: 20px;
-  fill: none;
-  stroke: currentColor;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-width: 1.5;
-}
-
-.theme-icon {
-  display: none;
-}
-
-html[data-theme-preference="system"] .theme-icon--system,
-html[data-theme-preference="light"] .theme-icon--light,
-html[data-theme-preference="dark"] .theme-icon--dark {
-  display: block;
 }
 
 .site-nav a,
@@ -2171,121 +2102,6 @@ html[data-theme-preference="dark"] .theme-icon--dark {
   color: var(--cyan);
 }
 
-/* Light mode keeps the evidence-rich hero and dark presentation panels intact while
-   moving reading-heavy sections onto a high-contrast light surface. */
-html[data-theme="light"] body {
-  background:
-    radial-gradient(circle at 86% 8%, rgba(28, 128, 164, 0.09), transparent 28rem),
-    var(--bg);
-}
-
-html[data-theme="light"] :is(
-  .site-header,
-  .hero,
-  .patents,
-  .contact,
-  .report-hero,
-  .report-cta,
-  .site-footer
-) {
-  --bg: #020b14;
-  --bg-deep: #01070d;
-  --surface: #071827;
-  --surface-soft: #0a1e2f;
-  --text: #f5f8fb;
-  --muted: #a7b4c5;
-  --muted-strong: #c7d1dc;
-  --cyan: #25d8f5;
-  --cyan-soft: #8deafa;
-  --orange: #ff6a2a;
-  --line: rgba(85, 178, 210, 0.24);
-  --line-strong: rgba(55, 216, 247, 0.6);
-}
-
-html[data-theme="light"] .problem {
-  background:
-    radial-gradient(circle at 78% 53%, rgba(45, 153, 188, 0.11), transparent 32%),
-    linear-gradient(180deg, #f4f7fa, #edf3f7 55%, #f4f7fa);
-}
-
-html[data-theme="light"] .platform {
-  background:
-    radial-gradient(circle at 50% 45%, rgba(45, 153, 188, 0.08), transparent 42%),
-    var(--bg);
-}
-
-html[data-theme="light"] .capability-status {
-  background:
-    radial-gradient(circle at 18% 24%, rgba(45, 153, 188, 0.09), transparent 28rem),
-    #eef4f7;
-}
-
-html[data-theme="light"] .capability-panel,
-html[data-theme="light"] .status-legend > div {
-  background: rgba(255, 255, 255, 0.88);
-  box-shadow: 0 16px 48px rgba(37, 65, 80, 0.08);
-}
-
-html[data-theme="light"] .methodology {
-  background:
-    radial-gradient(circle at 85% 32%, rgba(45, 153, 188, 0.09), transparent 30rem),
-    linear-gradient(180deg, #f7f9fb, #edf3f7);
-}
-
-html[data-theme="light"] :is(.known-map, .signal-field, .evidence-flow__track, .method-card) {
-  --bg: #020b14;
-  --surface: #071827;
-  --surface-soft: #0a1e2f;
-  --text: #f5f8fb;
-  --muted: #a7b4c5;
-  --muted-strong: #c7d1dc;
-  --cyan: #25d8f5;
-  --cyan-soft: #8deafa;
-  --orange: #ff6a2a;
-}
-
-html[data-theme="light"] :is(.known-map, .signal-field) {
-  background-color: #041421;
-}
-
-html[data-theme="light"] :is(.certificate-sample, .finding-list) {
-  background: #051826;
-  color: #f5f8fb;
-}
-
-html[data-theme="light"] .method-card {
-  color: var(--text);
-}
-
-html[data-theme="light"] .outcomes {
-  background: #f7f9fb;
-}
-
-html[data-theme="light"] .leadership {
-  background:
-    radial-gradient(circle at 18% 34%, rgba(45, 153, 188, 0.09), transparent 30rem),
-    linear-gradient(180deg, #f4f7fa, #edf3f7);
-}
-
-html[data-theme="light"] .leader-card__mark {
-  background: radial-gradient(circle, rgba(0, 126, 157, 0.13), rgba(236, 244, 248, 0.9));
-}
-
-html[data-theme="light"] .legal-main {
-  background:
-    radial-gradient(circle at 75% 14%, rgba(45, 153, 188, 0.09), transparent 30rem),
-    var(--bg);
-}
-
-html[data-theme="light"] .report-body {
-  background: #f7f9fb;
-}
-
-html[data-theme="light"] .not-found .theme-toggle {
-  background: rgba(255, 255, 255, 0.78);
-  color: var(--muted-strong);
-}
-
 .retention-list {
   margin: 28px 0 0;
 }
@@ -2428,11 +2244,6 @@ html[data-theme="light"] .not-found .theme-toggle {
 
   .header-actions {
     gap: 0;
-  }
-
-  .theme-toggle {
-    width: 40px;
-    height: 40px;
   }
 
   .menu-toggle {

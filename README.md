@@ -4,7 +4,7 @@ A dependency-free static website for `vellitas.com`. It can be hosted directly o
 
 ## Repository contents
 
-- `index.html`, `styles.css`, `theme.js`, and `script.js`: the production website
+- `index.html`, `styles.css`, and `script.js`: the production website
 - `assets/`: original website artwork and identity assets
 - `deploy/nginx/vellitas.com.conf`: the production Nginx virtual host and contact-form proxy
 - `services/contact-form/`: the dependency-free, same-origin briefing-form service
@@ -80,6 +80,5 @@ logo family was rebuilt as transparent vector artwork from the highest-resolutio
 source and includes full-logo light/dark variants plus blue, green, yellow, and red report shields.
 No third-party stock artwork or external font service is used.
 
-The site follows the visitor's operating-system color preference by default. The header control
-cycles through system, light, and dark modes and stores the choice locally in the browser. It does
-not add tracking or send the preference to Vellitas.
+The production site intentionally uses the established dark presentation at every system setting.
+The experimental light mode and its header control are not included in the active interface.

@@ -8,40 +8,6 @@
   const stageItems = [...document.querySelectorAll("[data-stage]")];
   const year = document.querySelector("[data-year]");
   const contactForm = document.querySelector("#contact-form");
-  const themeToggles = [...document.querySelectorAll("[data-theme-toggle]")];
-
-  const themeLabels = {
-    system: "System theme",
-    light: "Light theme",
-    dark: "Dark theme",
-  };
-
-  const nextTheme = {
-    system: "light",
-    light: "dark",
-    dark: "system",
-  };
-
-  const syncThemeControls = () => {
-    const preference = document.documentElement.dataset.themePreference || "system";
-    const next = nextTheme[preference] || "system";
-    themeToggles.forEach((toggle) => {
-      toggle.setAttribute("aria-label", `${themeLabels[preference]}. Activate ${themeLabels[next].toLowerCase()}.`);
-      toggle.setAttribute("title", `${themeLabels[preference]} (next: ${themeLabels[next].toLowerCase()})`);
-      const label = toggle.querySelector("[data-theme-label]");
-      if (label) label.textContent = themeLabels[preference];
-    });
-  };
-
-  themeToggles.forEach((toggle) => {
-    toggle.addEventListener("click", () => {
-      const preference = document.documentElement.dataset.themePreference || "system";
-      window.vellitasTheme?.setPreference(nextTheme[preference] || "system");
-    });
-  });
-
-  window.addEventListener("vellitas:themechange", syncThemeControls);
-  syncThemeControls();
 
   document.querySelectorAll("a[href]").forEach((link) => {
     let destination;
