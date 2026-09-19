@@ -4,11 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="robots" content="noindex" />
-    <link rel="stylesheet" href="/styles.css" />
+    <meta name="theme-color" content="#020b14" />
+    <link rel="icon" href="/assets/favicon.svg?v=20260918-2" type="image/svg+xml" />
+    <link rel="stylesheet" href="/styles.css?v=20260918-4" />
     <title>Page not found | Vellitas</title>
     <style>
       .not-found { min-height: 100svh; display: grid; place-items: center; padding: 32px; text-align: center; }
       .not-found div { max-width: 680px; }
+      .not-found .wordmark { margin: 0 auto 48px; }
       .not-found h1 { margin: 0; font-size: clamp(52px, 9vw, 110px); font-weight: 450; letter-spacing: -.05em; }
       .not-found p { margin: 20px auto 34px; color: var(--muted); font-size: 18px; }
     </style>
@@ -16,11 +19,14 @@
   <body>
     <main class="not-found">
       <div>
-        <a class="wordmark" href="/">VELLITAS</a>
+        <a class="wordmark wordmark--on-dark" href="/" aria-label="Vellitas home">
+          <img src="/assets/vellitas-logo-on-dark.svg?v=20260918-2" width="1813" height="450" alt="" />
+        </a>
         <h1>Signal not found.</h1>
         <p>The page you requested is outside this map.</p>
         <a class="button button--primary" href="/">Return home</a>
       </div>
     </main>
+    <script src="/script.js?v=20260918-4" defer></script>
   </body>
 </html>

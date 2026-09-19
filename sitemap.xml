@@ -11,8 +11,18 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://vellitas.com/evidence.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://vellitas.com/privacy.html</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://vellitas.com/data-practices.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
   </url>
 </urlset>
