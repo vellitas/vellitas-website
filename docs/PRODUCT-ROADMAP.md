@@ -12,11 +12,24 @@ The website status colors are blue for the Vellitas assessment, green for pass, 
 
 ## Available now
 
-- Internet-visible certificate discovery for approved customer scope.
+- Internet-visible certificate discovery from approved company names, domains, IP ranges, and other
+  customer markers.
+- Certificate and endpoint enrichment including IP address, country, issuer, serial number,
+  signature algorithm, effective and expiration dates, validity duration, organization marker, key
+  strength, and presented encryption protocol.
 - DNS, reverse DNS, network, geospatial, configuration, and historical enrichment.
-- Certificate health, expiration, self-signed certificate, weak configuration, unusual-location, name-encroachment, and historical-change analysis.
+- Certificate-authority inventory and third-party versus self-signed classification.
+- Expired, near-expiry, long-validity, weak-key, weak-signature, weak-protocol, weak-cipher,
+  wildcard, and publicly exposed non-production certificate analysis.
+- Unusual-location and name/domain-encroachment analysis with customer validation before a risk
+  signal is treated as misuse or compromise.
 - Evidence-based reporting with corrective work and an outside-in verification test.
 - Consultant-led remediation or collaboration with the customer's security, IT, and technology providers.
+
+These capabilities are demonstrated in the supplied December 2016 Global Risk and Vulnerability
+Report and mapped in [Report capability mapping](REPORT-CAPABILITY-MAPPING.md). The report proves
+the analytical capability, not that every legacy metric remains current or that the workflow is
+already fully productized.
 
 ## Subscription operating model
 
@@ -37,17 +50,27 @@ The public patent family describes internet-wide certificate discovery, combinin
 ### High-value metadata and analysis
 
 1. **TLS and server posture**
-   Capture supported protocol versions, cipher suites, chain completeness, key and signature strength, compression, revocation signals, renegotiation behavior, and other externally observable handshake characteristics.
+   Protocol, cipher, key-strength, and signature analysis are current. Expand the normalized evidence
+   model for chain completeness, compression, revocation signals, renegotiation behavior, and other
+   externally observable handshake characteristics.
 2. **Certificate identity and deployment graph**
-   Link fingerprints, public-key hashes, serial numbers, subject and authority key identifiers, issuer, SANs, DNS, reverse DNS, IP addresses, network owner, and observed locations. Use the graph to identify the same certificate or key across multiple hosts or regions.
+   Serial number, issuer, IP, organization marker, and location correlation are current. Productize
+   fingerprints, public-key hashes, subject and authority key identifiers, SANs, DNS, reverse DNS,
+   network owner, and same-certificate or same-key deployment graphs.
 3. **Historical observations**
    Preserve first-seen, last-seen, observation time, network and geolocation history, configuration changes, and renewal lineage. Show what changed, when it changed, and when Vellitas observed the change.
 4. **Expected-versus-observed policy**
-   Let customers define approved issuers, locations, networks, cloud regions, protocol versions, certificate lifetimes, and environments. Flag deviations from those expectations.
+   Analyst-led comparison with expected issuers, locations, protocols, lifetimes, and environments is
+   current. Productize tenant-configurable policy, approved networks and cloud regions, exceptions,
+   and explainable deviation scoring.
 5. **Certificate creep**
-   Identify development, test, QA, staging, internal, sample, default, and self-signed certificates exposed publicly. Combine naming signals with location and server context to reduce false positives.
+   Current naming analysis identifies development, test, QA, staging, internal, sample, default,
+   and self-signed certificates exposed publicly. Expand correlation with location, ownership, and
+   server context to reduce false positives.
 6. **Name encroachment**
-   Detect lookalike company and domain names, character substitution, suspicious prefixes or suffixes, and certificates issued for names that could mislead customers.
+   Current name and domain encroachment analysis identifies organization names, domains, proximal
+   names, and possible character substitutions. Expand similarity models, CT-driven notification,
+   ownership evidence, and analyst disposition.
 7. **Incident blast radius**
    Search by issuer, issuance window, fingerprint, public key, configuration weakness, or location to identify every affected public deployment after a CA, key, or protocol incident.
 8. **Notification and remediation workflow**
@@ -114,7 +137,7 @@ Generated remediation scripts are a roadmap capability and must be treated as co
 
 ### Next
 
-- Add Certificate Transparency and name-encroachment monitoring.
+- Add continuous Certificate Transparency and name-encroachment change monitoring.
 - Add alerting, ticket creation, ownership, retest, and audit history.
 - Add an attack-surface graph and vendor attribution.
 - Launch tenant-scoped portfolio search with candidate-scope review, RBAC, SSO/MFA, and audit logging.

@@ -15,6 +15,14 @@ The product narrative is:
 
 The report is intended to be actionable by corporate security, internal IT, or a company's third-party technology provider.
 
+A supplied December 2016 Global Risk and Vulnerability Report confirmed that Vellitas already
+delivered internet-visible certificate discovery, geospatial and name-encroachment analysis,
+certificate-authority inventory, self-signed and lifecycle findings, weak key/signature/protocol/
+cipher analysis, wildcard and non-production detection, certificate-level evidence, and corrective
+guidance. A modern current-capability report prototype and a separately labeled future-state roadmap
+report now preserve that distinction. Legacy validity-duration counts contain an internal
+inconsistency and are flagged for raw-data reconciliation rather than silently corrected.
+
 The public evidence section documents how vendor credentials, embedded third-party code, managed
 service software, trusted updates, stolen certificates, fraudulent issuance, and TLS defects have
 created real attack paths. Large incidents and downstream small-business impacts are presented with

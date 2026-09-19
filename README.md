@@ -15,6 +15,8 @@ A dependency-free static website for `vellitas.com`. It can be hosted directly o
 - `docs/EVIDENCE-AND-STANDARDS.md`: incident sources, claim boundaries, CT requirements, and standards mapping
 - `docs/CUSTOMER-PORTAL.md`: tenant isolation, scope onboarding, search, and remediation controls
 - `scripts/check-production.sh`: production availability, redirect, header, and TLS checks
+- `scripts/build-vellitas-reports.py`: reproducible current-capability and roadmap PDF prototypes
+- `output/pdf/`: generated report prototypes; not published to the production website
 - `.github/workflows/site-health.yml`: hourly production monitoring through GitHub Actions
 
 ## Preview locally
