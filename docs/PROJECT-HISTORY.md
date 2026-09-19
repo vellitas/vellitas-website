@@ -58,3 +58,9 @@ The content and information architecture were developed from the supplied Vellit
 ## Production record
 
 The launch site was configured on the Surf Ubuntu host with Nginx, HTTPS, security headers, versioned releases, and a reversible `current` symlink. Amazon Route 53 directs both the apex and `www` hostnames to production. Full operational details are in [`DEPLOYMENT.md`](DEPLOYMENT.md).
+
+## Repository history remediation
+
+On September 18, 2026, the feature branch history was rewritten and force-pushed to remove earlier report artifacts containing customer-identifying assessment data. The public branch now points to sanitized replacement commit `0fdd3f1d0902e936391eea915dea6bb31f583906`; the removed commits are no longer referenced by the branch or the local repository.
+
+GitHub Support ticket `#4772667` was opened to request server-side removal of cached commit views, pull-request references, and stored Git objects that may remain reachable by exact object ID. The ticket is pending GitHub Support review.
