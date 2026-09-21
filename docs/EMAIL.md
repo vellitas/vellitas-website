@@ -1,6 +1,6 @@
 # Website email
 
-The public website uses `contact@vellitas.com`. It is a Google Workspace alternate email address for the existing company user, so messages to the alias arrive in the same inbox without an additional Workspace license.
+The public role alias is `contact@vellitas.com`. It is a Google Workspace alternate email address for the existing company user, so messages to the alias arrive in the same inbox without an additional Workspace license. The website no longer publishes the address as its primary call to action; visitors use the protected same-origin contact form.
 
 The personal mailbox address is not present in the checked-in website source.
 
@@ -10,9 +10,9 @@ Receiving through an alias does not automatically make it the outgoing sender. T
 
 ## Spam and address harvesting
 
-Any email address published in HTML can be collected by automated crawlers. Using the role alias limits exposure of the primary mailbox and makes the public address easier to filter or replace, but it does not prevent spam.
+Any email address published in HTML or structured data can be collected by automated crawlers. Using the role alias limits exposure of the primary mailbox and makes the public address easier to filter or replace, but it does not prevent spam. The deployed form reduces harvesting and adds rate limiting, bot heuristics, strict validation, duplicate suppression, and logging. Do not place mail provider credentials in client-side JavaScript.
 
-If spam becomes significant, replace direct `mailto:` actions with a server-side contact form protected by rate limiting, bot detection, validation, and logging. Do not place mail provider credentials in client-side JavaScript.
+Surf has no active mail transport. Form submissions are durably stored in a private SQLite database and must be reviewed with the administrator command documented in `services/contact-form/README.md`. Configure a transactional provider or Google Workspace relay before claiming automatic email notifications.
 
 ## Domain authentication
 

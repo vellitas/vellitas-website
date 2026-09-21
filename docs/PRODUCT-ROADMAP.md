@@ -2,38 +2,195 @@
 
 This document translates public Vellitas patent records into product-planning opportunities. It is not a legal opinion, a claim-construction analysis, or a statement that every listed capability is currently available. Public-facing material should distinguish shipped features from roadmap items.
 
+## Product status definitions
+
+- **Available now**: delivered through the current Vellitas assessment and report workflow.
+- **Near-term roadmap**: the next productization work after the real report is normalized into a repeatable evidence model.
+- **Future roadmap**: a validated direction that still requires design, security review, and delivery planning.
+
+The website status colors are blue for the Vellitas assessment, green for pass, yellow for caution, and red for immediate action. They communicate assessment outcome, not roadmap maturity.
+
+## Available now
+
+- Internet-visible certificate discovery from approved company names, domains, IP ranges, and other
+  customer markers.
+- Certificate and endpoint enrichment including IP address, country, issuer, serial number,
+  signature algorithm, effective and expiration dates, validity duration, organization marker, key
+  strength, and presented encryption protocol.
+- DNS, reverse DNS, network, geospatial, configuration, and historical enrichment.
+- Certificate-authority inventory and third-party versus self-signed classification.
+- Expired, near-expiry, long-validity, weak-key, weak-signature, weak-protocol, weak-cipher,
+  wildcard, and publicly exposed non-production certificate analysis.
+- Unusual-location and name/domain-encroachment analysis with customer validation before a risk
+  signal is treated as misuse or compromise.
+- Evidence-based reporting with corrective work and an outside-in verification test.
+- Consultant-led remediation or collaboration with the customer's security, IT, and technology providers.
+
+These capabilities are demonstrated in the supplied December 2016 Global Risk and Vulnerability
+Report and mapped in [Report capability mapping](REPORT-CAPABILITY-MAPPING.md). The report proves
+the analytical capability, not that every legacy metric remains current or that the workflow is
+already fully productized.
+
+## Subscription operating model
+
+Vellitas is a continuous service rather than a one-time report. The standard lifecycle is:
+
+1. Confirm the customer's authorized scope and establish a baseline.
+2. Deliver the initial assessment report and prioritized remediation plan.
+3. Complete the corrective work through Vellitas consultants, the customer's team, or a shared delivery model.
+4. Reobserve affected endpoints and record verified closure.
+5. Continue monitoring the external security profile and notify the customer when a validated change requires action.
+
+The standard planning cadence is a full onboarding baseline, daily review of changed or newly discovered endpoints, weekly portfolio reassessment, monthly reporting, quarterly scope confirmation, and on-demand retesting after remediation. Customer contracts define actual service levels and notification timing.
+
 ## Capabilities supported by the patent family
 
 The public patent family describes internet-wide certificate discovery, combining certificate contents with external observations, querying for vulnerable certificates, comparing expected and observed information, preserving changes over time, and notifying customers or requesting corrective action.
 
 ### High-value metadata and analysis
 
-1. **TLS and server posture**
-   Capture supported protocol versions, cipher suites, chain completeness, key and signature strength, compression, revocation signals, renegotiation behavior, and other externally observable handshake characteristics.
-2. **Certificate identity and deployment graph**
-   Link fingerprints, public-key hashes, serial numbers, subject and authority key identifiers, issuer, SANs, DNS, reverse DNS, IP addresses, network owner, and observed locations. Use the graph to identify the same certificate or key across multiple hosts or regions.
-3. **Historical observations**
+1. **Reproducible cryptographic evidence**
+   Productize raw presented-chain retention, stable certificate fingerprints, SPKI/public-key
+   identifiers, versioned trust bundles, immutable provenance, and replayable evidence so a reported
+   result can be reproduced from the cryptographic material observed.
+2. **TLS and server posture**
+   Protocol, cipher, key-strength, and signature analysis are current. Expand the normalized evidence
+   model for chain completeness, compression, revocation signals, renegotiation behavior, and other
+   externally observable handshake characteristics.
+3. **Certificate identity and deployment graph**
+   Serial number, issuer, IP, organization marker, and location correlation are current. Productize
+   fingerprints, public-key hashes, subject and authority key identifiers, SANs, DNS, reverse DNS,
+   network owner, and same-certificate or same-key deployment graphs.
+4. **Historical observations**
    Preserve first-seen, last-seen, observation time, network and geolocation history, configuration changes, and renewal lineage. Show what changed, when it changed, and when Vellitas observed the change.
-4. **Expected-versus-observed policy**
-   Let customers define approved issuers, locations, networks, cloud regions, protocol versions, certificate lifetimes, and environments. Flag deviations from those expectations.
-5. **Certificate creep**
-   Identify development, test, QA, staging, internal, sample, default, and self-signed certificates exposed publicly. Combine naming signals with location and server context to reduce false positives.
-6. **Name encroachment**
-   Detect lookalike company and domain names, character substitution, suspicious prefixes or suffixes, and certificates issued for names that could mislead customers.
-7. **Incident blast radius**
+5. **Expected-versus-observed policy**
+   Analyst-led comparison with expected issuers, locations, protocols, lifetimes, and environments is
+   current. Productize tenant-configurable policy, approved networks and cloud regions, exceptions,
+   and explainable deviation scoring.
+6. **Certificate creep**
+   Current naming analysis identifies development, test, QA, staging, internal, sample, default,
+   and self-signed certificates exposed publicly. Expand correlation with location, ownership, and
+   server context to reduce false positives.
+7. **Name encroachment**
+   Current name and domain encroachment analysis identifies organization names, domains, proximal
+   names, and possible character substitutions. Expand similarity models, CT-driven notification,
+   ownership evidence, and analyst disposition.
+8. **Incident blast radius**
    Search by issuer, issuance window, fingerprint, public key, configuration weakness, or location to identify every affected public deployment after a CA, key, or protocol incident.
-8. **Notification and remediation workflow**
+9. **Notification and remediation workflow**
    Notify customers when observations change, generate assignable remediation work, request revocation or removal when appropriate, retest the public endpoint, and preserve an audit trail through closure.
 
 ## Adjacent outside-in capabilities
 
-- Certificate Transparency monitoring for early warning when a related certificate is issued.
+- Continuous Certificate Transparency ingestion for early warning when a related certificate is
+  issued. Correlate issuer, serial number, fingerprint, public-key hash, SANs, log timestamp,
+  DNS, IP, ASN, provider, geolocation, current deployments, and customer-approved policy. Suppress
+  known renewals and approved CDN or cloud patterns before notification. Authenticate the source
+  with pinned log keys, signed log metadata and tree heads, append-only Merkle consistency proofs,
+  authenticated data tiles, and content-addressed issuer objects before publishing alerts.
 - An attack-surface graph connecting certificates, domains, DNS, IP addresses, autonomous systems, cloud providers, ports, and externally visible services.
 - Domain and DNS posture checks covering CAA, DNSSEC, SPF, DKIM, DMARC, dangling records, and takeover indicators.
 - Web-edge posture including HTTPS redirects, HSTS, security headers, exposed administrative interfaces, and obsolete protocols.
-- Vendor and subsidiary exposure views that separate first-party assets from hosted, acquired, or third-party infrastructure.
+- Vendor and subsidiary exposure views that separate first-party assets from hosted, acquired, or
+  third-party infrastructure. Maintain the customer-to-vendor relationship, the business service,
+  access level, authorized assessment scope, criticality, required baseline, exceptions, and most
+  recent verification result.
 - API, webhook, SIEM, and ticketing integrations with ownership, due dates, retest status, and evidence attachments.
 - Exposure trends and an executive score based on observed evidence, severity, duration, recurrence, and remediation progress.
+
+## Competitor-informed enhancements that fit the Vellitas direction
+
+The following capabilities broaden the value of the certificate, DNS, network, and historical
+evidence model without turning Vellitas into a general-purpose SOC platform. They remain roadmap
+items until they meet the same evidence, authorization, tenant-isolation, and production-verification
+requirements as the core assessment.
+
+### Add after the certificate intelligence core is reliable
+
+1. **Brand-abuse investigation beyond certificate names**
+   Extend name encroachment into candidate phishing sites, counterfeit login pages, fake mobile
+   applications, and public-channel impersonation. Use certificate, DNS, registration, hosting,
+   visual, and customer-brand evidence to rank candidates; require analyst or customer validation
+   before escalation or takedown.
+2. **External secret and credential-exposure signals**
+   Correlate confirmed customer domains and repositories with licensed or permissioned signals for
+   exposed credentials, API keys, tokens, and source-code references. Store the minimum evidence
+   needed to establish the occurrence and response state; do not reproduce secrets in ordinary
+   reports or turn the baseline scanner into a credential collector.
+3. **Customer-authorized API and cloud inventory**
+   Import approved cloud-account, API-gateway, certificate-manager, load-balancer, and DNS
+   inventories, then compare them with the outside-in view. This improves ownership confidence and
+   highlights public assets that appear in only one view without granting public evidence automatic
+   tenant scope.
+4. **Continuous vendor assurance workflows**
+   Convert vendor observations into a scoped portfolio with relationship criticality, minimum
+   expected TLS/DNS posture, exceptions, accountable owners, material-change alerts, and periodic
+   re-verification. This builds on Vellitas's existing third-party exposure direction rather than
+   creating a separate questionnaire product.
+5. **Evidence-grounded investigation experience**
+   Add saved investigations, relationship exploration, controlled natural-language queries,
+   change and executive summaries, and an explanation panel that identifies observed fact,
+   deterministic rule, statistical anomaly, model inference, and recommendation separately.
+6. **Operational integrations**
+   Deliver deduplicated findings and verification results through REST APIs, webhooks, SIEM, SOAR,
+   ticketing, and collaboration systems. Preserve tenant scope, evidence links, ownership, due date,
+   acknowledgement, and closure status in both directions.
+
+### Consider later, through controlled providers and policies
+
+7. **Licensed breach and dark-web intelligence**
+   Evaluate reputable commercial feeds for customer-linked credential, paste, marketplace, and
+   actor-chatter signals. Require source licensing, provenance, confidence, retention, access, and
+   legal review; Vellitas should not build an indiscriminate dark-web collection operation merely
+   to match a competitor checklist.
+8. **Bounded response automation**
+   Support pre-approved actions such as opening a ticket, requesting revocation, updating an
+   allowlisted edge policy, or invoking a customer-owned remediation workflow. Host isolation,
+   account locking, firewall changes, and other high-impact SOC actions remain outside the default
+   product and require an explicit integration, accountable owner, rollback, kill switch, audit,
+   and outside-in verification.
+
+### Intentionally not a near-term objective
+
+- Replacing a customer's SIEM, endpoint-detection platform, identity provider, or SOC.
+- Unrestricted AI-generated database queries or unsupervised security conclusions.
+- Collecting application bodies, credentials, or private customer data during the standard
+  certificate assessment.
+- Treating public relationships, leaked references, geography, or shared infrastructure as proof of
+  customer ownership or compromise.
+
+## Customer portal and scope control
+
+The proposed portal is a roadmap capability. It must not expose a global certificate search to customers. Every asset, observation, finding, report, remediation artifact, script, and query must be bound to a tenant identifier and enforced with deny-by-default authorization at the data layer.
+
+Onboarding begins with customer-provided seed domains, brands, subsidiaries, acquisitions, approved networks, and cloud accounts. Vellitas then uses public certificate, SAN, Certificate Transparency, DNS, reverse-DNS, RDAP, ASN, redirect, and shared-infrastructure signals to propose related assets. A candidate remains in a review queue until ownership or assessment authority is confirmed, ideally with DNS TXT proof and otherwise through documented manual approval. Quarterly scope confirmation and ownership-change checks reduce stale authorization.
+
+Once approved, the customer can search and filter only its tenant-scoped portfolio—for example, self-signed certificates, a specific business unit, issuer, region, or remediation state. Narrowing and expanding a query changes only filters within the approved portfolio; it never expands authorization. See [Customer portal architecture](CUSTOMER-PORTAL.md).
+
+## Vendor assurance model
+
+Vendor assurance is a continuous use case rather than a one-time procurement questionnaire. A
+customer should identify vendors whose software, code, identity, remote access, hosted service, or
+network connection could affect its operations or data. Vellitas can then apply a customer-approved
+outside-in baseline proportionate to that relationship.
+
+The initial baseline should include certificate validity and chain health, unexpected issuers,
+certificate and public-key reuse, supported TLS versions and cipher suites, DNS and nameserver
+posture, observed IP/ASN/provider/geography, exposed administrative or appliance interfaces within
+scope, and historical change. Continuous checks should identify material drift and attach the
+observed evidence, confidence, customer policy, responsible party, and retest requirement.
+
+Passive public sources such as Certificate Transparency and DNS history may identify a candidate
+vendor exposure. Active assessment must remain within written authorization. A vendor anomaly does
+not establish compromise and must be validated against legitimate CDN, cloud, disaster-recovery,
+acquisition, and subcontractor patterns.
+
+The evidence and standards supporting this model are maintained in
+[Evidence, vendor risk, and standards](EVIDENCE-AND-STANDARDS.md).
+
+## Remediation automation safeguards
+
+Generated remediation scripts are a roadmap capability and must be treated as controlled change artifacts, not autonomous fixes. Every script should be versioned, tied to a specific finding and target, reviewed by Vellitas and the customer, support a dry-run or preview where the platform permits it, require explicit approval, preserve output and rollback guidance, and be verified from the outside after execution. Automatic execution is off by default.
 
 ## Recommended sequence
 
@@ -43,17 +200,26 @@ The public patent family describes internet-wide certificate discovery, combinin
 - Add historical observations and same-certificate or same-key deployment detection.
 - Add customer-defined expected locations, networks, issuers, and protocol policies.
 - Produce remediation instructions and an outside-in verification result for every finding.
+- Apply the public data-retention and responsible-scanning baseline and support contract-specific overrides.
 
 ### Next
 
-- Add Certificate Transparency and name-encroachment monitoring.
+- Add continuous Certificate Transparency and name-encroachment change monitoring.
 - Add alerting, ticket creation, ownership, retest, and audit history.
 - Add an attack-surface graph and vendor attribution.
+- Add controlled brand-abuse candidates and external secret/credential-exposure signals for
+  approved customer identities.
+- Import customer-authorized cloud, API, DNS, and certificate inventories for expected-versus-observed comparison.
+- Launch tenant-scoped portfolio search with candidate-scope review, RBAC, SSO/MFA, and audit logging.
+- Generate reviewed, versioned remediation scripts with dry-run, approval, and rollback controls.
 
 ### Later
 
 - Add approved automated actions, including revocation or removal requests, only with strong authorization controls and human review.
 - Expand into broader DNS and web-edge posture after the certificate workflow is reliable and explainable.
+- Add per-tenant workflow integrations, customer-configured policy, and executive exposure trends.
+- Evaluate licensed breach and dark-web intelligence feeds after privacy, provenance, retention,
+  and commercial-use controls are approved.
 
 ## Website assessment
 

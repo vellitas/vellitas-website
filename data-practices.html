@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Vellitas responsible scanning, data minimization, and retention practices." />
+    <meta name="theme-color" content="#020b14" />
+    <link rel="canonical" href="https://vellitas.com/data-practices.html" />
+    <link rel="icon" href="assets/favicon.svg?v=20260918-2" type="image/svg+xml" />
+    <link rel="stylesheet" href="styles.css?v=20260920-1" />
+    <title>Data &amp; Responsible Scanning | Vellitas</title>
+  </head>
+  <body class="content-page">
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <header class="site-header" data-header>
+      <a class="wordmark wordmark--on-dark" href="index.html#top" aria-label="Vellitas home"><img src="assets/vellitas-logo-on-dark.svg?v=20260918-2" width="1813" height="450" alt="" /></a>
+      <button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="site-navigation" data-menu-toggle><span></span><span></span></button>
+      <nav class="site-nav" id="site-navigation" aria-label="Primary navigation" data-menu>
+        <a href="index.html#problem">Problem</a>
+        <a href="index.html#platform">Platform</a>
+        <a href="index.html#methodology">Methodology</a>
+        <a href="evidence.html">Evidence</a>
+        <a href="index.html#patents">Patents</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+      <div class="header-actions">
+        <a class="button button--header" href="index.html#contact">Talk to Vellitas</a>
+      </div>
+    </header>
+
+    <main id="main-content" class="legal-main">
+      <article class="section-shell legal-copy">
+        <header>
+          <p class="eyebrow">Operational practice</p>
+          <h1>Data &amp; responsible scanning</h1>
+          <p class="legal-copy__updated">Effective September 18, 2026</p>
+          <p>
+            This statement describes the operating baseline Vellitas uses for outside-in
+            assessments. A customer agreement may define a narrower scope, different retention
+            period, or additional controls. This statement is not permission for any person to scan
+            systems they do not own or have authority to assess.
+          </p>
+        </header>
+
+        <section>
+          <h2>Authorized scope</h2>
+          <p>
+            Vellitas performs customer work under written authorization. Customers provide seed
+            domains, brands, subsidiaries, acquired names, networks, or other scope information.
+            Related assets discovered from public evidence are treated as candidates until Vellitas
+            or the customer confirms that they belong in scope. Candidate association alone is not
+            presented as proof of ownership.
+          </p>
+        </section>
+
+        <section>
+          <h2>What an assessment observes</h2>
+          <p>
+            A certificate assessment may record the certificate chain, subject and subject
+            alternative names, issuer, serial number, validity, fingerprints, public-key and
+            signature characteristics, TLS protocol and cipher support, chain completeness,
+            compression or renegotiation behavior where relevant, revocation signals, public
+            Certificate Transparency records, DNS and reverse DNS, IP address, network owner,
+            observed geolocation, service port, observation time, and changes between observations.
+          </p>
+          <p>
+            Vellitas may derive findings, confidence, severity, ownership candidates, remediation
+            instructions, scripts, verification results, and trend information from that evidence.
+          </p>
+        </section>
+
+        <section>
+          <h2>Efficient, low-impact collection</h2>
+          <p>
+            Vellitas uses rate-limited connections and the minimum protocol exchange needed to
+            observe the relevant public evidence. A typical certificate check establishes a TLS
+            handshake, records the required metadata, and closes the connection. Retries use
+            backoff, concurrency is bounded, and scanning pauses when a service indicates stress.
+            The certificate assessment does not download or index application page content.
+          </p>
+        </section>
+
+        <section>
+          <h2>What Vellitas does not access</h2>
+          <p>
+            The standard outside-in assessment does not use customer credentials, access private
+            keys, sign in to user accounts, query application databases, decrypt user payloads,
+            enter internal networks, exploit a vulnerability, guess passwords, evade an access
+            control, or perform denial-of-service or other availability testing. Any separately
+            authorized test must be documented with its own scope and safeguards.
+          </p>
+        </section>
+
+        <section>
+          <h2>Standard retention schedule</h2>
+          <p>
+            Vellitas stores only what is reasonably necessary to deliver the service, preserve a
+            defensible historical view, verify remediation, meet legal obligations, and protect the
+            service. The following schedule is the default unless a customer agreement requires a
+            shorter or longer period:
+          </p>
+          <dl class="retention-list">
+            <div><dt>Certificate, TLS, DNS, network, geospatial, and derived historical observations</dt><dd>For the subscription term and up to seven years afterward</dd></div>
+            <div><dt>Findings, reports, remediation plans, approved scripts, verification evidence, and audit history</dt><dd>For the subscription term and up to seven years afterward</dd></div>
+            <div><dt>Candidate asset associations not approved into customer scope</dt><dd>Up to 90 days</dd></div>
+            <div><dt>Website contact requests</dt><dd>Up to 24 months after the last substantive interaction</dd></div>
+            <div><dt>Routine web and security logs</dt><dd>30 days; relevant records may be preserved for up to one year during a security investigation</dd></div>
+            <div><dt>Backups containing deleted information</dt><dd>Expire through the normal backup cycle within 35 days</dd></div>
+            <div><dt>Contracts, billing, and required corporate records</dt><dd>As required by law, generally seven years</dd></div>
+          </dl>
+          <p>
+            At the end of the applicable period, records are deleted or irreversibly aggregated.
+            Vellitas may preserve specific records when required by law, a litigation hold, fraud
+            prevention, or an active security investigation. Customers may contract for a different
+            retention period where operationally and legally feasible.
+          </p>
+        </section>
+
+        <section>
+          <h2>Separation and access</h2>
+          <p>
+            Customer scope, observations, findings, reports, and remediation artifacts are assigned
+            to that customer. Any future customer portal will enforce tenant scope at the data layer,
+            use role-based access, maintain audit records, and prevent a search from returning assets
+            outside the customer's approved portfolio.
+          </p>
+        </section>
+
+        <section>
+          <h2>Questions or scanning concerns</h2>
+          <p>
+            A system owner who believes a Vellitas observation is causing harm, is misattributed, or
+            should be paused can use the <a href="index.html#contact">contact form</a>. Include the
+            affected hostname or IP address, the relevant time, and a way for Vellitas to verify the
+            requester's authority. Vellitas will investigate and can suppress or rate-adjust an
+            endpoint while the concern is reviewed.
+          </p>
+        </section>
+      </article>
+    </main>
+
+    <footer class="site-footer">
+      <div class="section-shell site-footer__layout">
+        <a class="wordmark wordmark--on-dark" href="index.html#top" aria-label="Vellitas home"><img src="assets/vellitas-logo-on-dark.svg?v=20260918-2" width="1813" height="450" alt="" /></a>
+        <nav aria-label="Footer navigation">
+          <a href="index.html#platform">Platform</a>
+          <a href="index.html#methodology">Methodology</a>
+          <a href="evidence.html">Evidence</a>
+          <a href="index.html#contact">Contact</a>
+          <a href="privacy.html">Privacy</a>
+          <a href="data-practices.html" aria-current="page">Data &amp; scanning</a>
+        </nav>
+        <p>© <span data-year>2026</span> Vellitas, LLC. All rights reserved.</p>
+      </div>
+    </footer>
+    <script src="script.js?v=20260918-4" defer></script>
+  </body>
+</html>
