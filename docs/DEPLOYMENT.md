@@ -97,9 +97,9 @@ ssh surf 'sudo certbot renew --dry-run'
 
 ## Current production release
 
-Website commit `da298f3` was deployed as `/var/www/vellitas.com/releases/20260918T135048Z`
-on September 18, 2026. The immediately preceding rollback release is
-`/var/www/vellitas.com/releases/20260918T055703Z`. The contact service remains at
+Website commit `f948c76` was deployed as `/var/www/vellitas.com/releases/20260921T035702Z`
+on September 21, 2026. The immediately preceding rollback release is
+`/var/www/vellitas.com/releases/20260918T135048Z`. The contact service remains at
 `/opt/vellitas-contact/releases/20260918T041542Z`.
 
 The current website includes the corrected blue-shield header logo, matching report and favicon
