@@ -29,7 +29,7 @@
     <link rel="icon" href="assets/favicon.svg?v=20260918-2" type="image/svg+xml" />
     <link rel="manifest" href="site.webmanifest" />
     <link rel="preload" href="assets/hero-globe.webp" as="image" type="image/webp" />
-    <link rel="stylesheet" href="styles.css?v=20260918-4" />
+    <link rel="stylesheet" href="styles.css?v=20260920-1" />
     <title>Vellitas | Outside-In Digital Certificate Intelligence</title>
     <script type="application/ld+json">
       {
@@ -330,9 +330,9 @@
               <h3>Outside-in certificate assessment</h3>
               <ul>
                 <li>Global certificate discovery from public-facing services</li>
-                <li>DNS, reverse DNS, network, geospatial, and configuration enrichment</li>
-                <li>Certificate health, self-signed certificate, and weak cipher findings</li>
-                <li>Unusual-location, name-encroachment, and historical-change analysis</li>
+                <li>Certificate-level evidence, fingerprints, and key/signature characteristics</li>
+                <li>TLS protocol, cipher, chain, lifecycle, and cryptographic health findings</li>
+                <li>DNS, network, geospatial, configuration, and historical-change analysis</li>
                 <li>Evidence-based remediation reports and outside-in verification</li>
               </ul>
             </article>
@@ -342,9 +342,10 @@
               <h3>Customer workflow and broader exposure intelligence</h3>
               <ul>
                 <li>Tenant-scoped customer search and portfolio dashboards</li>
-                <li>Certificate Transparency and event-driven issuance monitoring</li>
-                <li>Attack-surface graph, vendor attribution, and expanded DNS/web posture</li>
-                <li>Ticketing, SIEM, webhook, and ownership integrations</li>
+                <li>Authenticated Certificate Transparency and issuance monitoring</li>
+                <li>Same-certificate and public-key deployment graphs with movement history</li>
+                <li>Expected-versus-observed policy and explainable evidence classification</li>
+                <li>Vendor, brand, leak-signal, ticketing, SIEM, and webhook workflows</li>
                 <li>Reviewed, versioned remediation scripts with dry-run and approval controls</li>
               </ul>
               <a class="text-link" href="https://github.com/vellitas/vellitas-website/blob/main/docs/PRODUCT-ROADMAP.md" target="_blank" rel="noopener noreferrer">
@@ -353,6 +354,103 @@
               </a>
             </article>
           </div>
+        </div>
+      </section>
+
+      <section class="evidence-depth section" id="evidence-depth" aria-labelledby="evidence-depth-heading">
+        <div class="section-shell">
+          <div class="evidence-depth__intro reveal">
+            <div>
+              <p class="eyebrow">The Vellitas difference</p>
+              <h2 id="evidence-depth-heading">Cryptographic evidence you can trace, explain, and act on.</h2>
+            </div>
+            <p>
+              Asset discovery is only the beginning. Vellitas is designed to preserve the evidence
+              behind a conclusion, show how an identity changes across infrastructure, compare the
+              observation with customer policy, and verify that corrective work actually closed the
+              exposure.
+            </p>
+          </div>
+
+          <div class="evidence-depth__grid">
+            <article class="evidence-depth__card reveal">
+              <span class="evidence-depth__status evidence-depth__status--building">Engineering foundation</span>
+              <h3>Preserve the cryptographic record</h3>
+              <p>
+                The new collection foundation retains the presented certificate chain with certificate fingerprints,
+                SPKI/public-key identifiers, serial numbers, SANs, issuers, validity, key details,
+                and signature algorithms. Production retention, trust-bundle, and restore controls
+                remain release requirements before this becomes a continuous customer service.
+              </p>
+            </article>
+
+            <article class="evidence-depth__card reveal">
+              <span class="evidence-depth__status evidence-depth__status--building">Assessment now · productizing</span>
+              <h3>Measure the negotiated edge</h3>
+              <p>
+                Record the TLS handshake and use bounded follow-up checks to identify accepted
+                protocol versions, cipher groups, chain and hostname failures, and downgrade
+                exposure without turning an assessment into an intrusive application scan.
+              </p>
+            </article>
+
+            <article class="evidence-depth__card reveal">
+              <span class="evidence-depth__status evidence-depth__status--building">Productizing</span>
+              <h3>Follow identity as infrastructure moves</h3>
+              <p>
+                Correlate certificate fingerprints and public-key reuse across IP addresses, ASNs,
+                providers, and geographies, then preserve first-seen, last-seen, renewal lineage,
+                and infrastructure movement for investigation.
+              </p>
+            </article>
+
+            <article class="evidence-depth__card reveal">
+              <span class="evidence-depth__status evidence-depth__status--roadmap">Production roadmap</span>
+              <h3>Authenticate Certificate Transparency</h3>
+              <p>
+                Validate signed log catalogs and tree heads, verify append-only Merkle consistency,
+                authenticate static data tiles, and retain content-addressed issuer evidence before
+                CT observations become customer-facing alerts.
+              </p>
+            </article>
+
+            <article class="evidence-depth__card reveal">
+              <span class="evidence-depth__status evidence-depth__status--roadmap">Product roadmap</span>
+              <h3>Make policy and confidence explainable</h3>
+              <p>
+                Compare observed issuers, networks, providers, countries, protocols, and lifetimes
+                with approved expectations. Label each result as observed fact, deterministic rule,
+                statistical anomaly, model inference, or recommendation—with evidence and version.
+              </p>
+            </article>
+
+            <article class="evidence-depth__card reveal">
+              <span class="evidence-depth__status evidence-depth__status--building">Service now · automation roadmap</span>
+              <h3>Move from finding to verified closure</h3>
+              <p>
+                Deliver certificate-specific corrective work and outside-in retesting today. Add
+                reviewed, versioned scripts with preview, approval, rollback guidance, recorded
+                output, and post-change verification as controlled automation is productized.
+              </p>
+            </article>
+          </div>
+
+          <aside class="scope-assurance reveal" aria-label="Scope and authorization controls">
+            <div>
+              <p class="eyebrow">Governed scope</p>
+              <h3>Public evidence does not become customer scope by assumption.</h3>
+              <p>
+                Candidate assets require documented ownership or assessment authority before they
+                enter a customer portfolio. Tenant access is deny-by-default, active collection is
+                policy- and exclusion-gated, and system owners can request suppression or a rate
+                adjustment through the published opt-out process.
+              </p>
+            </div>
+            <a class="text-link" href="data-practices.html">
+              Read data and scanning practices
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6" /></svg>
+            </a>
+          </aside>
         </div>
       </section>
 
@@ -757,7 +855,7 @@
           <a href="privacy.html">Privacy</a>
           <a href="data-practices.html">Data &amp; scanning</a>
         </nav>
-        <p>© <span data-year>2026</span> Vellitas, LLC · Wyoming</p>
+        <p>© <span data-year>2026</span> Vellitas, LLC. All rights reserved.</p>
       </div>
     </footer>
 

@@ -49,6 +49,13 @@ The content and information architecture were developed from the supplied Vellit
 - Includes a clearly labeled illustrative remediation report, a privacy notice, and organization structured data.
 - Monitors the production pages, redirect behavior, security headers, and TLS certificate lifetime through an hourly GitHub Actions workflow.
 - Distinguishes available capabilities from roadmap features and documents the customer portal, tenant isolation, responsible-scanning, retention, remediation automation, and continuous subscription model.
+- Centers the competitive message on reproducible cryptographic evidence: raw chain preservation,
+  certificate and SPKI identifiers, bounded protocol/cipher measurement, infrastructure movement,
+  authenticated Certificate Transparency, expected-versus-observed policy, explainable result
+  types, and verified remediation.
+- Extends the roadmap with controlled brand-abuse, secret/credential-exposure, authorized cloud/API
+  inventory, vendor-assurance, investigation, integration, licensed intelligence, and bounded-response
+  capabilities while keeping general SOC replacement and indiscriminate collection out of scope.
 - Includes transparent vector shield assets for the blue Vellitas mark, green pass, yellow caution, and red immediate-action states.
 - Rebuilds the complete logo family from the highest-resolution owner-supplied artwork, including a blue-shield header wordmark, shield-only report marks, and a matching favicon.
 - Uses the established dark presentation consistently; the experimental light mode and its selector were removed after visual review.

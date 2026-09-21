@@ -84,13 +84,18 @@ Public breach reports rarely identify one cipher suite as the sole cause of a ma
 
 [CISA's DNS infrastructure tampering guidance](https://www.cisa.gov/sites/default/files/publications/CISAInsights-Cyber-MitigateDNSInfrastructureTampering_S508C.pdf) recommends monitoring Certificate Transparency logs. Vellitas should treat continuous CT monitoring as a production capability only after the following are operating and verified:
 
-1. Ingest and deduplicate current public CT entries from redundant sources.
-2. Match exact domains, wildcard names, SANs, subsidiaries, approved brand variants, and reviewed name-similarity candidates.
-3. Preserve issuer, serial number, validity, fingerprint, SPKI/public-key hash, log timestamp, first-seen time, and source-log evidence.
-4. Correlate issuance with DNS, IP, ASN, provider, geolocation, current deployments, and customer policy.
-5. Alert on an unexpected issuer, new key, unusual SAN expansion, short lifetime, suspicious name, or issuance inconsistent with approved infrastructure.
-6. Score confidence and suppress known renewals, CDN changes, and other approved patterns.
-7. Preserve the raw evidence needed to reproduce the finding and provide revocation or validation steps.
+1. Ingest and deduplicate current public CT entries from approved, redundant sources.
+2. Verify signed log metadata and tree heads with pinned log keys.
+3. Verify append-only growth using RFC 6962 consistency proofs or the authenticated Merkle-tile
+   path for static logs; reject rollback, split-view, and same-size root conflicts.
+4. Authenticate retrieved entries and issuer objects against the verified tree before advancing a
+   customer-facing cursor.
+5. Match exact domains, wildcard names, SANs, subsidiaries, approved brand variants, and reviewed name-similarity candidates.
+6. Preserve issuer, serial number, validity, fingerprint, SPKI/public-key hash, log timestamp, first-seen time, and source-log evidence.
+7. Correlate issuance with DNS, IP, ASN, provider, geolocation, current deployments, and customer policy.
+8. Alert on an unexpected issuer, new key, unusual SAN expansion, short lifetime, suspicious name, or issuance inconsistent with approved infrastructure.
+9. Score confidence and suppress known renewals, CDN changes, and other approved patterns.
+10. Preserve the raw evidence needed to reproduce the finding and provide revocation or validation steps.
 
 Until those controls are verified, public material should continue to label continuous, event-driven CT monitoring as roadmap work. Current assessments may use public CT evidence during analyst-led investigation without claiming continuous coverage.
 

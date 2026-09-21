@@ -49,31 +49,35 @@ The public patent family describes internet-wide certificate discovery, combinin
 
 ### High-value metadata and analysis
 
-1. **TLS and server posture**
+1. **Reproducible cryptographic evidence**
+   Productize raw presented-chain retention, stable certificate fingerprints, SPKI/public-key
+   identifiers, versioned trust bundles, immutable provenance, and replayable evidence so a reported
+   result can be reproduced from the cryptographic material observed.
+2. **TLS and server posture**
    Protocol, cipher, key-strength, and signature analysis are current. Expand the normalized evidence
    model for chain completeness, compression, revocation signals, renegotiation behavior, and other
    externally observable handshake characteristics.
-2. **Certificate identity and deployment graph**
+3. **Certificate identity and deployment graph**
    Serial number, issuer, IP, organization marker, and location correlation are current. Productize
    fingerprints, public-key hashes, subject and authority key identifiers, SANs, DNS, reverse DNS,
    network owner, and same-certificate or same-key deployment graphs.
-3. **Historical observations**
+4. **Historical observations**
    Preserve first-seen, last-seen, observation time, network and geolocation history, configuration changes, and renewal lineage. Show what changed, when it changed, and when Vellitas observed the change.
-4. **Expected-versus-observed policy**
+5. **Expected-versus-observed policy**
    Analyst-led comparison with expected issuers, locations, protocols, lifetimes, and environments is
    current. Productize tenant-configurable policy, approved networks and cloud regions, exceptions,
    and explainable deviation scoring.
-5. **Certificate creep**
+6. **Certificate creep**
    Current naming analysis identifies development, test, QA, staging, internal, sample, default,
    and self-signed certificates exposed publicly. Expand correlation with location, ownership, and
    server context to reduce false positives.
-6. **Name encroachment**
+7. **Name encroachment**
    Current name and domain encroachment analysis identifies organization names, domains, proximal
    names, and possible character substitutions. Expand similarity models, CT-driven notification,
    ownership evidence, and analyst disposition.
-7. **Incident blast radius**
+8. **Incident blast radius**
    Search by issuer, issuance window, fingerprint, public key, configuration weakness, or location to identify every affected public deployment after a CA, key, or protocol incident.
-8. **Notification and remediation workflow**
+9. **Notification and remediation workflow**
    Notify customers when observations change, generate assignable remediation work, request revocation or removal when appropriate, retest the public endpoint, and preserve an audit trail through closure.
 
 ## Adjacent outside-in capabilities
@@ -81,7 +85,9 @@ The public patent family describes internet-wide certificate discovery, combinin
 - Continuous Certificate Transparency ingestion for early warning when a related certificate is
   issued. Correlate issuer, serial number, fingerprint, public-key hash, SANs, log timestamp,
   DNS, IP, ASN, provider, geolocation, current deployments, and customer-approved policy. Suppress
-  known renewals and approved CDN or cloud patterns before notification.
+  known renewals and approved CDN or cloud patterns before notification. Authenticate the source
+  with pinned log keys, signed log metadata and tree heads, append-only Merkle consistency proofs,
+  authenticated data tiles, and content-addressed issuer objects before publishing alerts.
 - An attack-surface graph connecting certificates, domains, DNS, IP addresses, autonomous systems, cloud providers, ports, and externally visible services.
 - Domain and DNS posture checks covering CAA, DNSSEC, SPF, DKIM, DMARC, dangling records, and takeover indicators.
 - Web-edge posture including HTTPS redirects, HSTS, security headers, exposed administrative interfaces, and obsolete protocols.
@@ -91,6 +97,67 @@ The public patent family describes internet-wide certificate discovery, combinin
   recent verification result.
 - API, webhook, SIEM, and ticketing integrations with ownership, due dates, retest status, and evidence attachments.
 - Exposure trends and an executive score based on observed evidence, severity, duration, recurrence, and remediation progress.
+
+## Competitor-informed enhancements that fit the Vellitas direction
+
+The following capabilities broaden the value of the certificate, DNS, network, and historical
+evidence model without turning Vellitas into a general-purpose SOC platform. They remain roadmap
+items until they meet the same evidence, authorization, tenant-isolation, and production-verification
+requirements as the core assessment.
+
+### Add after the certificate intelligence core is reliable
+
+1. **Brand-abuse investigation beyond certificate names**
+   Extend name encroachment into candidate phishing sites, counterfeit login pages, fake mobile
+   applications, and public-channel impersonation. Use certificate, DNS, registration, hosting,
+   visual, and customer-brand evidence to rank candidates; require analyst or customer validation
+   before escalation or takedown.
+2. **External secret and credential-exposure signals**
+   Correlate confirmed customer domains and repositories with licensed or permissioned signals for
+   exposed credentials, API keys, tokens, and source-code references. Store the minimum evidence
+   needed to establish the occurrence and response state; do not reproduce secrets in ordinary
+   reports or turn the baseline scanner into a credential collector.
+3. **Customer-authorized API and cloud inventory**
+   Import approved cloud-account, API-gateway, certificate-manager, load-balancer, and DNS
+   inventories, then compare them with the outside-in view. This improves ownership confidence and
+   highlights public assets that appear in only one view without granting public evidence automatic
+   tenant scope.
+4. **Continuous vendor assurance workflows**
+   Convert vendor observations into a scoped portfolio with relationship criticality, minimum
+   expected TLS/DNS posture, exceptions, accountable owners, material-change alerts, and periodic
+   re-verification. This builds on Vellitas's existing third-party exposure direction rather than
+   creating a separate questionnaire product.
+5. **Evidence-grounded investigation experience**
+   Add saved investigations, relationship exploration, controlled natural-language queries,
+   change and executive summaries, and an explanation panel that identifies observed fact,
+   deterministic rule, statistical anomaly, model inference, and recommendation separately.
+6. **Operational integrations**
+   Deliver deduplicated findings and verification results through REST APIs, webhooks, SIEM, SOAR,
+   ticketing, and collaboration systems. Preserve tenant scope, evidence links, ownership, due date,
+   acknowledgement, and closure status in both directions.
+
+### Consider later, through controlled providers and policies
+
+7. **Licensed breach and dark-web intelligence**
+   Evaluate reputable commercial feeds for customer-linked credential, paste, marketplace, and
+   actor-chatter signals. Require source licensing, provenance, confidence, retention, access, and
+   legal review; Vellitas should not build an indiscriminate dark-web collection operation merely
+   to match a competitor checklist.
+8. **Bounded response automation**
+   Support pre-approved actions such as opening a ticket, requesting revocation, updating an
+   allowlisted edge policy, or invoking a customer-owned remediation workflow. Host isolation,
+   account locking, firewall changes, and other high-impact SOC actions remain outside the default
+   product and require an explicit integration, accountable owner, rollback, kill switch, audit,
+   and outside-in verification.
+
+### Intentionally not a near-term objective
+
+- Replacing a customer's SIEM, endpoint-detection platform, identity provider, or SOC.
+- Unrestricted AI-generated database queries or unsupervised security conclusions.
+- Collecting application bodies, credentials, or private customer data during the standard
+  certificate assessment.
+- Treating public relationships, leaked references, geography, or shared infrastructure as proof of
+  customer ownership or compromise.
 
 ## Customer portal and scope control
 
@@ -140,6 +207,9 @@ Generated remediation scripts are a roadmap capability and must be treated as co
 - Add continuous Certificate Transparency and name-encroachment change monitoring.
 - Add alerting, ticket creation, ownership, retest, and audit history.
 - Add an attack-surface graph and vendor attribution.
+- Add controlled brand-abuse candidates and external secret/credential-exposure signals for
+  approved customer identities.
+- Import customer-authorized cloud, API, DNS, and certificate inventories for expected-versus-observed comparison.
 - Launch tenant-scoped portfolio search with candidate-scope review, RBAC, SSO/MFA, and audit logging.
 - Generate reviewed, versioned remediation scripts with dry-run, approval, and rollback controls.
 
@@ -148,6 +218,8 @@ Generated remediation scripts are a roadmap capability and must be treated as co
 - Add approved automated actions, including revocation or removal requests, only with strong authorization controls and human review.
 - Expand into broader DNS and web-edge posture after the certificate workflow is reliable and explainable.
 - Add per-tenant workflow integrations, customer-configured policy, and executive exposure trends.
+- Evaluate licensed breach and dark-web intelligence feeds after privacy, provenance, retention,
+  and commercial-use controls are approved.
 
 ## Website assessment
 

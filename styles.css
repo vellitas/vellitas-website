@@ -1182,6 +1182,117 @@ button {
   font-size: 14px;
 }
 
+.evidence-depth {
+  border-top: 1px solid rgba(55, 216, 247, 0.08);
+  background:
+    radial-gradient(circle at 82% 18%, rgba(12, 94, 129, 0.19), transparent 31rem),
+    linear-gradient(180deg, #020b14, #03101c);
+}
+
+.evidence-depth__intro {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(360px, 0.65fr);
+  align-items: end;
+  gap: 8vw;
+}
+
+.evidence-depth__intro h2 {
+  max-width: 920px;
+}
+
+.evidence-depth__intro > p {
+  margin: 0;
+  color: var(--muted-strong);
+  font-size: clamp(17px, 1.25vw, 21px);
+  line-height: 1.58;
+}
+
+.evidence-depth__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1px;
+  margin-top: 76px;
+  background: var(--line);
+}
+
+.evidence-depth__card {
+  min-height: 350px;
+  padding: clamp(30px, 3.2vw, 48px);
+  background: rgba(4, 20, 33, 0.97);
+}
+
+.evidence-depth__status {
+  display: inline-flex;
+  border: 1px solid rgba(37, 216, 245, 0.3);
+  border-radius: 999px;
+  padding: 6px 10px;
+  color: var(--cyan-soft);
+  font-family: "SFMono-Regular", Consolas, monospace;
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.evidence-depth__status--building {
+  border-color: rgba(126, 218, 145, 0.32);
+  color: #9de7ad;
+}
+
+.evidence-depth__status--roadmap {
+  border-color: rgba(255, 106, 42, 0.32);
+  color: #ff9b70;
+}
+
+.evidence-depth__card h3 {
+  margin: 62px 0 0;
+  color: var(--text);
+  font-size: clamp(23px, 1.85vw, 30px);
+  font-weight: 550;
+  letter-spacing: -0.025em;
+  line-height: 1.18;
+}
+
+.evidence-depth__card p {
+  margin: 18px 0 0;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.72;
+}
+
+.scope-assurance {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: end;
+  gap: 6vw;
+  margin-top: 48px;
+  border: 1px solid var(--line);
+  border-left: 2px solid var(--cyan);
+  border-radius: var(--radius);
+  padding: clamp(30px, 4vw, 52px);
+  background: rgba(5, 24, 38, 0.74);
+}
+
+.scope-assurance h3 {
+  max-width: 850px;
+  margin: 0;
+  font-size: clamp(27px, 2.5vw, 40px);
+  font-weight: 520;
+  letter-spacing: -0.03em;
+  line-height: 1.16;
+}
+
+.scope-assurance p:not(.eyebrow) {
+  max-width: 900px;
+  margin: 20px 0 0;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.scope-assurance .text-link {
+  white-space: nowrap;
+}
+
 .methodology {
   border-top: 1px solid rgba(55, 216, 247, 0.08);
   background:
@@ -2537,6 +2648,10 @@ button {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .evidence-depth__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .scan-principle {
     grid-template-columns: 1fr;
   }
@@ -2692,6 +2807,7 @@ button {
 
   .problem__intro,
   .section-heading,
+  .evidence-depth__intro,
   .methodology__intro,
   .outcomes__layout,
   .patents__layout,
@@ -2802,6 +2918,11 @@ button {
 
   .capability-status__grid {
     grid-template-columns: 1fr;
+  }
+
+  .scope-assurance {
+    grid-template-columns: 1fr;
+    align-items: start;
   }
 
   .capability-panel {
@@ -2989,8 +3110,21 @@ button {
   }
 
   .methodology__grid,
+  .evidence-depth__grid,
   .status-legend {
     grid-template-columns: 1fr;
+  }
+
+  .evidence-depth__card {
+    min-height: 0;
+  }
+
+  .evidence-depth__card h3 {
+    margin-top: 40px;
+  }
+
+  .scope-assurance .text-link {
+    white-space: normal;
   }
 
   .vendor-risk__footer {

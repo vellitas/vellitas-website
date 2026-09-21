@@ -10,7 +10,7 @@
     <meta name="theme-color" content="#020b14" />
     <link rel="canonical" href="https://vellitas.com/evidence.html" />
     <link rel="icon" href="assets/favicon.svg?v=20260918-2" type="image/svg+xml" />
-    <link rel="stylesheet" href="styles.css?v=20260918-4" />
+    <link rel="stylesheet" href="styles.css?v=20260920-1" />
     <title>Security Evidence &amp; Standards | Vellitas</title>
   </head>
   <body class="content-page">
@@ -224,10 +224,12 @@
             <p>
               Vellitas should correlate the following observations across approved customer and
               vendor scope. Continuous Certificate Transparency ingestion and event-driven issuance
-              alerts remain explicit roadmap capabilities until production implementation is verified.
+              alerts remain explicit roadmap capabilities until signed log metadata, tree heads,
+              append-only Merkle consistency, and retrieved entries are authenticated in production.
             </p>
           </div>
           <ul class="correlation-list reveal">
+            <li>Raw presented chain, certificate fingerprint, and SPKI/public-key identity</li>
             <li>Certificate fingerprint and public-key reuse across IP addresses</li>
             <li>New countries, ASNs, cloud providers, or hosting networks</li>
             <li>Certificate Transparency issuance and unexpected issuers</li>
@@ -342,7 +344,7 @@
           <a href="privacy.html">Privacy</a>
           <a href="data-practices.html">Data &amp; scanning</a>
         </nav>
-        <p>© <span data-year>2026</span> Vellitas, LLC · Wyoming</p>
+        <p>© <span data-year>2026</span> Vellitas, LLC. All rights reserved.</p>
       </div>
     </footer>
     <noscript><style>.reveal { opacity: 1; transform: none; }</style></noscript>
